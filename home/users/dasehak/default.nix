@@ -18,6 +18,10 @@ in {
     ../../modules
   ];
 
+  nixpkgs.overlays = [
+    (import ../../overlays/vesktop)
+  ];
+
   stylix.targets = {
     vscode.enable = false;
   };
