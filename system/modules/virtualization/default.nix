@@ -15,16 +15,8 @@ in {
 
   config = mkIf cfg.enable {
     virtualisation = {
-      docker.enable      = true;
-      libvirtd.enable    = true;
-      vmware.host = {
-        enable = true;
-        extraConfig = ''
-          # Allow unsupported device's OpenGL and Vulkan acceleration for guest vGPU
-          mks.gl.allowUnsupportedDrivers = "TRUE"
-          mks.vk.allowUnsupportedDevices = "TRUE"
-        '';
-      };
+      docker.enable = true;
+      libvirtd.enable = true;
       virtualbox.host = {
         enable = true;
         enableExtensionPack = true;
