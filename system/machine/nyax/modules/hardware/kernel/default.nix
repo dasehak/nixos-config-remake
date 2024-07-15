@@ -5,7 +5,7 @@
 
 {
   boot = {
-    kernelPackages = pkgs.linuxPackages_6_8;
+    kernelPackages = pkgs.linuxPackages_hardened;
     kernelModules = [
       "amdgpu"
       "kvm-amd"
@@ -86,6 +86,9 @@
     ];
 
     kernel.sysctl = {
+      # Chromium sandboxing workaround, maybe a little security hole
+      "kernel.unprivileged_userns_clone" = 1;
+
       # Hide kptrs even for processes with CAP_SYSLOG`
       "kernel.kptr_restrict" = 2;
 
