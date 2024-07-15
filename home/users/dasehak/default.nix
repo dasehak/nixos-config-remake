@@ -20,6 +20,7 @@ in {
 
   nixpkgs.overlays = [
     (import ../../overlays/vesktop)
+    (import ../../overlays/catppuccin-papirus-folders)
   ];
 
   stylix.targets = {
@@ -98,10 +99,7 @@ in {
       nur.repos.mur.ayugram-desktop
 
       # Icons
-      (catppuccin-papirus-folders.override {
-        flavor = "mocha";
-        accent = "lavender";
-      })
+      catppuccin-papirus-folders
 
       # Office
       onlyoffice-bin

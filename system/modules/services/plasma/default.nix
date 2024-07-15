@@ -14,6 +14,10 @@ in {
   };
 
   config = mkIf cfg.enable {
+    nixpkgs.overlays = [
+      (import ../../../overlays/catppuccin-sddm)
+    ];
+
     services = {
       desktopManager.plasma6.enable = true;
       displayManager = {
@@ -26,14 +30,7 @@ in {
     };
 
     environment.systemPackages = with pkgs; [
-      (catppuccin-papirus-folders.override {
-        flavor = "mocha";
-        accent = "lavender";
-      })
-      (catppuccin-sddm.override {
-        flavor = "mocha";
-        fontSize = "10";
-      })
+      catppuccin-sddm
       haruna
     ] ++ (with pkgs.kdePackages; [
       akonadi
