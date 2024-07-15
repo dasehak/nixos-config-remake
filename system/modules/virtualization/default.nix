@@ -25,6 +25,10 @@ in {
           mks.vk.allowUnsupportedDevices = "TRUE"
         '';
       };
+      virtualbox.host = {
+        enable = true;
+        enableExtensionPack = true;
+      };
     };
 
     programs.virt-manager.enable = true;

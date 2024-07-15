@@ -32,6 +32,7 @@ in {
             "docker"
             "libvirtd"
             "inpuit"
+            "vboxusers"
           ];
         };
 
