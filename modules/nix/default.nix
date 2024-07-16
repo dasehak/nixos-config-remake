@@ -62,6 +62,10 @@ in {
           "root"
           "dasehak"
         ];
+        allowed-users = [
+          "root"
+          "dasehak"
+        ];
       };
     } // optionalAttrs cfg.useGarbageCollection {
       gc = {
