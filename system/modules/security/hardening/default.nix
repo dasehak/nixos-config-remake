@@ -91,16 +91,10 @@ in {
     };
 
     security = {
-      lockKernelModules = true;
       protectKernelImage = true;
       forcePageTableIsolation = true;
       unprivilegedUsernsClone = true; # Chromium sandboxing workaround, maybe a little security hole
       virtualisation.flushL1DataCache = "always";
-    };
-
-    environment = {
-      memoryAllocator.provider = "scudo";
-      variables.SCUDO_OPTIONS = "ZeroContents=1";
     };
   };
 }
