@@ -15,7 +15,7 @@ in {
 
   config = mkIf cfg.enable {
     boot = {
-      kernelPackages = pkgs.linuxPackages_hardened;
+      kernelPackages = pkgs.linuxPackages_6_9_hardened;
 
       kernelParams = [
         # Security settings
