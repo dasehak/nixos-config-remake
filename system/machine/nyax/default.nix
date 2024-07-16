@@ -16,7 +16,13 @@
     users.enable                   = true;
     variables.enable               = true;
     virtualisation.enable          = true;
-    programs.systemPackages.enable = true;
+
+    programs = {
+      systemPackages.enable = true;
+      steam.enable          = true;
+      gamemode.enable       = true;
+      kdeconnect.enable     = true;
+    };
 
     security = {
       hardening.enable = true;
