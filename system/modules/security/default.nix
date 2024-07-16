@@ -1,22 +1,19 @@
 { lib
-, config
 , ...
 }:
 
 with lib;
 
-let
-  cfg = config.module.security;
-in {
-  options = {
-    module.security.enable = mkEnableOption "Enables security";
-  };
+{
+  imports = [
+    ./hardening
+    ./apparmor
+    ./sudo
+  ];
 
-  config = mkIf cfg.enable {
-    security = {
-      sudo.enable = false;
-      sudo-rs.enable = true;
-    };
+  module.security = {
+    hardening.enable = mkDefault false;
+    apparmor.enable  = mkDefault false;
+    sudo.enable      = mkDefault true;
   };
 }
-

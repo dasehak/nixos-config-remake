@@ -12,12 +12,16 @@
   module = {
     locales.enable                 = true;
     network.enable                 = true;
-    security.enable                = true;
     timedate.enable                = true;
     users.enable                   = true;
     variables.enable               = true;
     virtualisation.enable          = true;
     programs.systemPackages.enable = true;
+
+    security = {
+      hardening.enable = true;
+      apparmor.enable  = true;
+    };
 
     services = {
       bluetooth.enable = true;
