@@ -19,6 +19,8 @@
     '';
 
     kernelParams = [
+      "quiet"
+
       # IOMMU
       "intel_iommu=on"
       "iommu=pt"
