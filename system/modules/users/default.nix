@@ -28,12 +28,14 @@ in {
           extraGroups = [
             "audio"
             "networkmanager"
+            "input"
+          ] ++ (if username == "dasehak" then [
             "wheel"
             "docker"
             "libvirtd"
-            "inpuit"
             "vboxusers"
-          ];
+          ]
+          else []);
         };
 
         root = {
