@@ -52,6 +52,11 @@
       url = "github:fn2006/PollyMC";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    yandex-music = {
+      url = "github:cucumber-sp/yandex-music-linux";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs = { flake-parts, ... } @ inputs:

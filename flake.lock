@@ -423,6 +423,23 @@
         "type": "github"
       }
     },
+    "flake-utils_4": {
+      "inputs": {
+        "systems": "systems_8"
+      },
+      "locked": {
+        "lastModified": 1705309234,
+        "narHash": "sha256-uNRRNRKmJyCRC/8y1RqBkqWBLM034y4qN7EprSdmgyA=",
+        "owner": "numtide",
+        "repo": "flake-utils",
+        "rev": "1ef2e671c3b0c19053962c07dbda38332dcebf26",
+        "type": "github"
+      },
+      "original": {
+        "id": "flake-utils",
+        "type": "indirect"
+      }
+    },
     "fromYaml": {
       "flake": false,
       "locked": {
@@ -1375,7 +1392,8 @@
         "sops-nix": "sops-nix",
         "split-monitor-workspaces": "split-monitor-workspaces",
         "stylix": "stylix",
-        "xdghypr": "xdghypr"
+        "xdghypr": "xdghypr",
+        "yandex-music": "yandex-music"
       }
     },
     "rust-overlay": {
@@ -1577,6 +1595,21 @@
         "type": "github"
       }
     },
+    "systems_8": {
+      "locked": {
+        "lastModified": 1681028828,
+        "narHash": "sha256-Vy1rq5AaRuLzOxct8nz4T6wlgyUR7zLU309k9mBC768=",
+        "owner": "nix-systems",
+        "repo": "default",
+        "rev": "da67096a3b9bf56a91d16901293e51ba5b49a27e",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nix-systems",
+        "repo": "default",
+        "type": "github"
+      }
+    },
     "treefmt-nix": {
       "inputs": {
         "nixpkgs": [
@@ -1674,6 +1707,40 @@
         "owner": "UbiqueLambda",
         "repo": "yafas",
         "type": "github"
+      }
+    },
+    "yandex-music": {
+      "inputs": {
+        "flake-utils": "flake-utils_4",
+        "nixpkgs": [
+          "nixpkgs"
+        ],
+        "ymExe": "ymExe"
+      },
+      "locked": {
+        "lastModified": 1721024376,
+        "narHash": "sha256-cvzf2BvFD/u8xT9tuuMcIYcLFEZlE2gWSu/7RjXDCxw=",
+        "owner": "cucumber-sp",
+        "repo": "yandex-music-linux",
+        "rev": "cb2e73dd25014403974ce4dc8683e02b4a94242e",
+        "type": "github"
+      },
+      "original": {
+        "owner": "cucumber-sp",
+        "repo": "yandex-music-linux",
+        "type": "github"
+      }
+    },
+    "ymExe": {
+      "flake": false,
+      "locked": {
+        "narHash": "sha256-fY6WFe1fdaS95gismmP6dmfHUIQOqadxTrDgjKSC9GY=",
+        "type": "file",
+        "url": "https://music-desktop-application.s3.yandex.net/stable/Yandex_Music_x64_5.6.0.exe"
+      },
+      "original": {
+        "type": "file",
+        "url": "https://music-desktop-application.s3.yandex.net/stable/Yandex_Music_x64_5.6.0.exe"
       }
     }
   },

@@ -44,6 +44,7 @@ in {
     arrpc.enable          = true;
     obs-studio.enable     = true;
     syncthing.enable      = true;
+    yandex-music.enable   = true;
 
     nix-config = {
       enable                     = true;

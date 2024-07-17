@@ -2,10 +2,13 @@
 , ...
 }:
 
+with inputs;
+
 {
   imports = [
-    inputs.stylix.homeManagerModules.stylix
-    inputs.nur.hmModules.nur
+    stylix.homeManagerModules.stylix
+    nur.hmModules.nur
+    yandex-music.homeManagerModules.default
     ../../modules/stylix
 
     ./firefox
@@ -23,6 +26,7 @@
     ./arrpc
     ./obs-studio
     ./syncthing
+    ./yandex-music
   ];
 }
 
