@@ -72,12 +72,13 @@
 
     flake = {
       nixosConfigurations = {
-        nyax = libx.mkHost { hostname = "nyax"; username = "dasehak"; isWorkstation = true;  platform = linuxArch; };
+        nyax  = libx.mkHost { hostname = "nyax"; username = "dasehak"; isWorkstation = true;  platform = linuxArch; };
+        qemux = libx.mkHost { hostname = "qemux"; username = "dasehak"; isWorkstation = true;  platform = linuxArch; };
       };
 
       homeConfigurations = {
         "dasehak@nyax"  = libx.mkHome { hostname = "nyax";  username = "dasehak"; isWorkstation = true;  platform = linuxArch; };
-        "root@nyax"    = libx.mkHome { hostname = "nyax";  username = "root";   isWorkstation = true;  platform = linuxArch; };
+        "root@nyax"     = libx.mkHome { hostname = "nyax";  username = "root";   isWorkstation = true;  platform = linuxArch; };
       };
     };
   };
