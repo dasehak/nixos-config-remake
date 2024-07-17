@@ -57,6 +57,11 @@
       url = "github:cucumber-sp/yandex-music-linux";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    disko = {
+      url = "github:nix-community/disko";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs = { flake-parts, ... } @ inputs:
