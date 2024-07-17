@@ -10,13 +10,6 @@
     ];
 
     initrd = {
-      kernelModules = [
-        "virtio_balloon"
-        "virtio_console"
-        "virtio_rng"
-        "virtio_gpu"
-      ];
-
       availableKernelModules = [
         "ehci_pci"
         "aesni_intel"
@@ -36,6 +29,10 @@
 
       kernelModules = [
         "dm-snapshot"
+        "virtio_balloon"
+        "virtio_console"
+        "virtio_rng"
+        "virtio_gpu"
       ];
     };
   };
