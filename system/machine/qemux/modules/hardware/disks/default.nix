@@ -1,28 +1,73 @@
 _:
 
 {
-  fileSystems = {
-    "/" = {
-      device = "/dev/qemux_vg/root";
-      fsType = "btrfs";
-      options = [ "compress-force=zstd:3" ];
+  disko.devices = {
+    disk = {
+      vda = {
+        type = "disk";
+        device = "/dev/vda";
+        content = {
+          type = "gpt";
+          partitions = {
+            ESP = {
+              size = "500M";
+              type = "EF00";
+              content = {
+                type = "filesystem";
+                format = "vfat";
+                mountpoint = "/boot";
+                mountOptions = [
+                  "defaults"
+                ];
+              };
+            };
+            luks = {
+              size = "100%";
+              content = {
+                type = "luks";
+                name = "crypted";
+                extraOpenArgs = [ ];
+                settings.allowDiscards = true;
+                content = {
+                  type = "lvm_pv";
+                  vg = "qemux_vg";
+                };
+              };
+            };
+          };
+        };
+      };
     };
-
-    "/boot" = {
-      device = "/dev/vda2";
-      fsType = "btrfs";
-      options = [ "compress-force=zstd:3" ];
-    };
-
-    "/boot/efi" = {
-      device = "/dev/vda1";
-      fsType = "vfat";
-    };
-
-    "/home" = {
-      device = "/dev/qemux_vg/home";
-      fsType = "btrfs";
-      options = [ "compress-force=zstd:3" ];
+    lvm_vg = {
+      qemux_vg = {
+        type = "lvm_vg";
+        lvs = {
+          root = {
+            size = "30G";
+            content = {
+              type = "filesystem";
+              format = "brtfs";
+              mountpoint = "/";
+              mountOptions = [
+                "defaults"
+                "compress-force=zstd:3"
+              ];
+            };
+          };
+          home = {
+            size = "100%";
+            content = {
+              type = "filesystem";
+              format = "brtfs";
+              mountpoint = "/home";
+              mountOptions = [
+                "defaults"
+                "compress-force=zstd:3"
+              ];
+            };
+          };
+        };
+      };
     };
   };
 
