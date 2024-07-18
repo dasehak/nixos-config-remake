@@ -86,6 +86,9 @@
       homeConfigurations = {
         "dasehak@nyax"  = libx.mkHome { hostname = "nyax";  username = "dasehak"; isWorkstation = true;  platform = linuxArch; };
         "root@nyax"     = libx.mkHome { hostname = "nyax";  username = "root";   isWorkstation = true;  platform = linuxArch; };
+
+        "dasehak@qemux"  = libx.mkHome { hostname = "qemux";  username = "dasehak"; isWorkstation = true;  platform = linuxArch; };
+        "root@qemux"     = libx.mkHome { hostname = "qemux";  username = "root";   isWorkstation = true;  platform = linuxArch; };
       };
     };
   };
