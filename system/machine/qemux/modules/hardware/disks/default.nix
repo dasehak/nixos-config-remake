@@ -42,12 +42,24 @@ _:
       qemux_vg = {
         type = "lvm_vg";
         lvs = {
-          root = {
-            size = "30G";
+          persistent = {
+            size = "10G";
             content = {
               type = "filesystem";
               format = "btrfs";
-              mountpoint = "/";
+              mountpoint = "/persistent";
+              mountOptions = [
+                "defaults"
+                "compress-force=zstd:3"
+              ];
+            };
+          };
+          nix = {
+            size = "20G";
+            content = {
+              type = "filesystem";
+              format = "btrfs";
+              mountpoint = "/nix";
               mountOptions = [
                 "defaults"
                 "compress-force=zstd:3"
@@ -69,7 +81,17 @@ _:
         };
       };
     };
+    nodev."/" = {
+      fsType = "tmpfs";
+      mountOptions = [
+        "size=2G"
+        "defaults"
+        "mode=755"
+      ];
+    };
   };
+
+  fileSystems."/persistent".neededForBoot = true;
 
   boot.initrd.luks.devices.root = {
     device = "/dev/vda3";

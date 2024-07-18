@@ -7,6 +7,7 @@ with inputs;
 {
   imports = [
     disko.nixosModules.disko
+    impermanence.nixosModules.impermanence
 
     ./extra-hardware
     ./graphics-card
@@ -15,6 +16,7 @@ with inputs;
     ./sound
     ./boot
     ./disks
+    ./impermanence
   ];
 }
 
