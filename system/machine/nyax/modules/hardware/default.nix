@@ -2,6 +2,9 @@ _:
 
 {
   imports = [
+    disko.nixosModules.disko
+    impermanence.nixosModules.impermanence
+
     ./extra-hardware
     ./graphics-card
     ./network
@@ -9,6 +12,7 @@ _:
     ./sound
     ./boot
     ./disks
+    ./impermanence
   ];
 }
 
