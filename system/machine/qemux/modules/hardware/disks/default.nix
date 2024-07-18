@@ -15,7 +15,7 @@ _:
               content = {
                 type = "filesystem";
                 format = "vfat";
-                mountpoint = "/boot";
+                mountpoint = "/boot/efi";
                 mountOptions = [
                   "defaults"
                 ];
@@ -46,7 +46,7 @@ _:
             size = "30G";
             content = {
               type = "filesystem";
-              format = "brtfs";
+              format = "btrfs";
               mountpoint = "/";
               mountOptions = [
                 "defaults"
@@ -55,10 +55,10 @@ _:
             };
           };
           home = {
-            size = "100%";
+            size = "100%FREE";
             content = {
               type = "filesystem";
-              format = "brtfs";
+              format = "btrfs";
               mountpoint = "/home";
               mountOptions = [
                 "defaults"
