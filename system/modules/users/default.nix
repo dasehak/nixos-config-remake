@@ -16,10 +16,10 @@ in {
 
   config = mkIf cfg.enable {
     users = {
-      mutableUsers = true;
+      mutableUsers = false;
 
       users = {
-        ${username} = {
+        ${username} = (mkMerge [{
           isNormalUser = true;
           description = "${username}";
           home = "/home/${username}";
@@ -29,17 +29,22 @@ in {
             "audio"
             "networkmanager"
             "input"
-          ] ++ (if username == "dasehak" then [
+          ];
+        } (mkIf (username == "dasehak") {
+          extraGroups = [
             "wheel"
             "docker"
             "libvirtd"
             "vboxusers"
-          ]
-          else []);
-        };
+          ];
+
+          hashedPassword = "$6$5IZeCNcdDeFAW2xI$TcZuPTl.nqtsQpuNTqyzZmOaDyOdsLarbkeqbKjXO5UX80GNaAeVuuLB5iPZq90PdiyN0ru2eC7SiGxLoSvws.";
+        })]);
 
         root = {
           shell = pkgs.fish;
+
+          hashedPassword = "$6$LeLeCJgRtuwNB0Q8$UTGxyjxXEuULKoMwT1KrV7goOfFGXtWpCkEDr3ohrSLWRFIVTaV5qEbXQPreecCBRCpqkeEFbSNtAMsCOGB451";
         };
       };
     };
