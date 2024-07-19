@@ -22,7 +22,7 @@ _:
               };
             };
             luks = {
-              size = "100%";
+              size = "800G";
               content = {
                 type = "luks";
                 name = "crypted";
@@ -30,8 +30,18 @@ _:
                 settings.allowDiscards = true;
                 content = {
                   type = "lvm_pv";
-                  vg = "qemux_vg";
+                  vg = "nyax_vg";
                 };
+              };
+            };
+            windows = {
+              size = "100%";
+              content = {
+                type = "filesystem";
+                format = "ntfs";
+                extraArgs = [
+                  "-Q"
+                ];
               };
             };
           };

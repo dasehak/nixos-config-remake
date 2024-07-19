@@ -1,4 +1,8 @@
-_:
+{ inputs
+, ...
+}:
+
+with inputs;
 
 {
   imports = [
