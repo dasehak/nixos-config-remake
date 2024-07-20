@@ -64,6 +64,7 @@ in {
       # Security
       age
       sops
+      git-agecrypt
       grype
       syft
     ] ++ lib.optionals isWorkstation [

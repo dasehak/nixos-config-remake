@@ -2,3 +2,5 @@
 *.nix linguist-vendored=false
 *.lock linguist-vendored=false
 *.lua linguist-vendored=false
+
+secrets/git/securiteinfo_token filter=git-agecrypt diff=git-agecrypt
