@@ -13,12 +13,6 @@ in {
   };
 
   config = mkIf cfg.enable {
-    security = {
-      sudo.enable = false;
-      sudo-rs = {
-        enable = true;
-        execWheelOnly = true;
-      };
-    };
+    security.sudo.enable = true;
   };
 }
