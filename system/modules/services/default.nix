@@ -17,6 +17,7 @@ with lib;
     ./tlp
     ./plasma
     ./hyprland
+    ./sshd
   ];
 }
 
