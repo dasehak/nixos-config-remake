@@ -5,6 +5,7 @@
 {
   imports = [
     inputs.chaotic.nixosModules.default
+    inputs.sops-nix.nixosModules.sops
 
     inputs.stylix.nixosModules.stylix
     ../../modules/stylix

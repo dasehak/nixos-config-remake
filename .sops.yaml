@@ -1,7 +1,9 @@
 keys:
-  - &dasehak age1ql3z7hjy54pw3hyww5ayyfg7zqgvc7w3j2elw8zmrj2kg5sfn9aqmcac8p
+  - &dasehak age1a7jpt9qpqs69untz8sadycju3sqjwd072uah6zn9g0dnpt43kytqdey2jf
+  - &nyax age1w27sh8dyf937mnxx45rstchm43upv7m59xnkqstnwql42333sgrq0lh2fq
 creation_rules:
-  - path_regex: secrets/secrets.yaml$
+  - path_regex: secrets/sops/secrets.yaml$
     key_groups:
     - age:
       - *dasehak
+      - *nyax
