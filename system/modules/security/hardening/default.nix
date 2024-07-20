@@ -17,12 +17,21 @@ in {
     boot = {
       kernelPackages = pkgs.linuxPackages_6_9_hardened;
 
+      kernelModules = [
+        "lkrg"
+      ];
+
       kernelParams = [
         # Security settings
         "debugfs=off"
         "page_alloc.shuffle=1"
         "page_poison=1"
         "slab_nomerge"
+        "init_on_alloc=1"
+        "init_on_free=1"
+        "page_alloc.shuffle=1"
+        "randomize_kstack_offset=on"
+        "vsyscall=none"
       ];
 
       blacklistedKernelModules = [
@@ -87,6 +96,31 @@ in {
         # Ignore outgoing ICMP redirects (this is ipv4 only)
         "net.ipv4.conf.all.send_redirects" = false;
         "net.ipv4.conf.default.send_redirects" = false;
+
+        "net.ipv4.conf.all.forwarding" = false;
+        "net.ipv4.tcp_rfc1337" = true;
+        "net.ipv4.icmp_echo_ignore_all" = true;
+        "net.ipv4.tcp_sack" = false;
+        "net.ipv4.tcp_dsack" = false;
+
+        "net.ipv6.conf.all.accept_ra" = false;
+        "net.ipv6.conf.default.accept_ra" = false;
+
+        "dev.tty.ldisc_autoload" = false;
+
+        "kernel.yama.ptrace_scope" = 2;
+        "kernel.sysrq" = 0;
+        "kernel.unprivileged_bpf_disabled" = true;
+        "kernel.printk" = "3 3 3 3";
+        "kernel.kexec_load_disabled" = true;
+
+        "fs.protected_fifos" = 2;
+        "fs.protected_regular" = 2;
+        "fs.suid_dumpable" = false;
+
+        "vm.unprivileged_userfaultfd" = false;
+        "vm.mmap_rnd_bits" = 32;
+        "vm.mmap_rnd_compat_bits" = 16;
       };
     };
 

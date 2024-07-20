@@ -20,6 +20,7 @@
 
     kernelParams = [
       "quiet"
+      "loglevel=0"
 
       # IOMMU
       "intel_iommu=on"
