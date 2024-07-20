@@ -11,6 +11,7 @@ _:
       "/var/lib/systemd/coredump"
       "/etc/NetworkManager/system-connections"
       "/etc/secureboot"
+      { directory = "/var/lib/clamav"; user = "clamav"; group = "clamav"; mode = "u=rwx,g=rx,o=rx"; }
       { directory = "/var/lib/colord"; user = "colord"; group = "colord"; mode = "u=rwx,g=rx,o="; }
     ];
     files = [

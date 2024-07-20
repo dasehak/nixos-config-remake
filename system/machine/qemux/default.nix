@@ -26,6 +26,7 @@
     security = {
       hardening.enable = true;
       apparmor.enable  = true;
+      antivirus.enable = false;
     };
 
     services = {
@@ -36,6 +37,7 @@
       plasma.enable    = true;
       xserver.enable   = true;
       zram.enable      = true;
+      sshd.enable      = false;
     };
   };
 }

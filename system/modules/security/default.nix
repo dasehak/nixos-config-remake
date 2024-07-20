@@ -10,6 +10,7 @@ with lib;
     ./apparmor
     ./sudo
     ./sops
+    ./antivirus
   ];
 
   module.security = {
@@ -17,5 +18,6 @@ with lib;
     apparmor.enable  = mkDefault false;
     sudo.enable      = mkDefault true;
     sops.enable      = mkDefault true;
+    antivirus.enable = mkDefault false;
   };
 }
