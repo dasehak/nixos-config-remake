@@ -116,7 +116,7 @@ in {
         description = "scan all directories for suspect files";
         wantedBy = [ "timers.target" ];
         timerConfig = {
-          OnCalendar = "weekly";
+          OnCalendar = "monthly";
           Unit = "antivirusFullScan.service";
         };
       };
