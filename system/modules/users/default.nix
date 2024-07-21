@@ -44,7 +44,7 @@ in {
         root = {
           shell = pkgs.fish;
 
-          hashedPassword = "$6$LeLeCJgRtuwNB0Q8$UTGxyjxXEuULKoMwT1KrV7goOfFGXtWpCkEDr3ohrSLWRFIVTaV5qEbXQPreecCBRCpqkeEFbSNtAMsCOGB451";
+          hashedPassword = "!";
         };
       };
     };
