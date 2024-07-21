@@ -25,6 +25,7 @@
       # IOMMU
       "intel_iommu=on"
       "iommu=pt"
+      "efi=disable_early_pci_dma"
     ];
 
     initrd = {
