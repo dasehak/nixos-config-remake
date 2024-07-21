@@ -24,6 +24,7 @@ in {
         AllowAgentForwarding no
         AllowStreamLocalForwarding no
         AuthenticationMethods publickey
+        PermitRootLogin no
       '';
     };
   };
