@@ -32,6 +32,7 @@ in {
         "page_alloc.shuffle=1"
         "randomize_kstack_offset=on"
         "vsyscall=none"
+        "random.trust_cpu=off"
       ];
 
       blacklistedKernelModules = [
