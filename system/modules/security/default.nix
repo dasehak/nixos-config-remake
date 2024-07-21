@@ -11,6 +11,7 @@ with lib;
     ./sudo
     ./sops
     ./antivirus
+    ./usbguard
   ];
 
   module.security = {
@@ -19,5 +20,6 @@ with lib;
     sudo.enable      = mkDefault true;
     sops.enable      = mkDefault true;
     antivirus.enable = mkDefault false;
+    usbguard.enable  = mkDefault false;
   };
 }

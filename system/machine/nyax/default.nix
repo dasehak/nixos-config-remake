@@ -28,6 +28,7 @@
       hardening.enable = true;
       apparmor.enable  = true;
       antivirus.enable = true;
+      usbguard.enable  = true;
     };
 
     services = {
