@@ -8,6 +8,7 @@
       systemd-boot = {
         enable = false;
         consoleMode = "max";
+        editor = false;
       };
       efi = {
         canTouchEfiVariables = true;
