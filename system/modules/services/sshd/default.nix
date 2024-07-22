@@ -15,16 +15,24 @@ in {
   config = mkIf cfg.enable {
     services.openssh = {
       enable = true;
-      passwordAuthentication = false;
-      allowSFTP = false; # Don't set this if you need sftp
-      challengeResponseAuthentication = false;
+      allowSFTP = false;
+      ports = [ 5487 ];
+      settings = {
+        PasswordAuthentication = false;
+        KbdInteractiveAuthentication = false;
+        X11Forwarding = false;
+        PermitRootLogin = "no";
+        LogLevel = "VERBOSE";
+      };
       extraConfig = ''
-        AllowTcpForwarding yes
-        X11Forwarding no
+        AllowTcpForwarding no
         AllowAgentForwarding no
         AllowStreamLocalForwarding no
         AuthenticationMethods publickey
-        PermitRootLogin no
+        ClientAliveCountMax 2
+        MaxAuthTries 3
+        MaxSessions 2
+        TCPKeepAlive no
       '';
     };
   };
