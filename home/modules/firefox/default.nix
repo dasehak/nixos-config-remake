@@ -28,7 +28,7 @@ in {
           stylus
           firefox-color
           decentraleyes
-          dearrow
+          privacy-badger
           don-t-fuck-with-paste
           noscript
           libredirect
