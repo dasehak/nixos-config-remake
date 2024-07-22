@@ -25,6 +25,7 @@ in {
 
   stylix.targets = {
     vscode.enable = false;
+    kde.enable    = false;
   };
 
   module = {
