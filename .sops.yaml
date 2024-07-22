@@ -1,6 +1,6 @@
 keys:
   - &dasehak age1a7jpt9qpqs69untz8sadycju3sqjwd072uah6zn9g0dnpt43kytqdey2jf
-  - &nyax age1w27sh8dyf937mnxx45rstchm43upv7m59xnkqstnwql42333sgrq0lh2fq
+  - &nyax age1ml8nsgskn56x8uv9pncvly8gy2qna4dhuk2rfp289eq6qgq5ku6sszr2zy
 creation_rules:
   - path_regex: secrets/sops/secrets.yaml$
     key_groups:

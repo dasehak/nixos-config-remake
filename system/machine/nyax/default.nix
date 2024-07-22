@@ -1,4 +1,5 @@
 { inputs
+, config
 , ...
 }:
 
@@ -28,7 +29,10 @@
       hardening.enable = true;
       apparmor.enable  = true;
       antivirus.enable = true;
-      usbguard.enable  = true;
+      usbguard = {
+        enable = true;
+        ruleFile = config.sops.secrets.nyax_usb_rules.path;
+      };
     };
 
     services = {
