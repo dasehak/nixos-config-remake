@@ -16,7 +16,7 @@ let
     # Send an alert to all graphical users.
     for ADDRESS in /run/user/*; do
         USERID=''${ADDRESS#/run/user/}
-       /run/wrappers/bin/sudo -u "#$USERID" DBUS_SESSION_BUS_ADDRESS="unix:path=$ADDRESS/bus" ${pkgs.libnotify}/bin/notify-send -i dialog-warning "Virus detecteds" "$ALERT"
+       /run/wrappers/bin/sudo -u "#$USERID" DBUS_SESSION_BUS_ADDRESS="unix:path=$ADDRESS/bus" ${pkgs.libnotify}/bin/notify-send -i dialog-warning "Virus detected!" "$ALERT"
     done
   '';
 
