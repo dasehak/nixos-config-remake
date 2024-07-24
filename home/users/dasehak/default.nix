@@ -68,6 +68,7 @@ in {
       git-agecrypt
       grype
       syft
+      veracrypt
     ] ++ lib.optionals isWorkstation [
       # Text Editors
       obsidian
