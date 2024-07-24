@@ -1,5 +1,6 @@
 { lib
 , config
+, pkgs
 , ...
 }:
 
@@ -16,6 +17,10 @@ in {
     security.apparmor = {
       enable = true;
       killUnconfinedConfinables = true;
+      packages = with pkgs; [
+        apparmor-profiles
+        roddhjav-apparmor-rules # I'm not sure if it's working
+      ];
     };
   };
 }
