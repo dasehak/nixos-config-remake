@@ -26,7 +26,10 @@
     };
 
     security = {
-      hardening.enable = true;
+      hardening = {
+        enable = true;
+        cachyosKernel = true;
+      };
       apparmor.enable  = true;
       antivirus.enable = true;
       usbguard = {

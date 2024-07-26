@@ -10,12 +10,20 @@ let
   cfg = config.module.security.hardening;
 in {
   options = {
-    module.security.hardening.enable = mkEnableOption "Enables hardening";
+    module.security.hardening = {
+      enable = mkEnableOption "Enables hardening";
+
+      cachyosKernel = mkOption {
+        type = types.bool;
+        description = "Whether to use CachyOS-hardened kernel instead of vanilla kernel.";
+        default = false;
+      };
+    };
   };
 
   config = mkIf cfg.enable {
     boot = {
-      kernelPackages = pkgs.linuxPackages_6_9_hardened;
+      kernelPackages = if cfg.cachyosKernel then pkgs.linuxPackages_cachyos-hardened else pkgs.linuxPackages_6_9_hardened;
 
       kernelModules = [
         "lkrg"
