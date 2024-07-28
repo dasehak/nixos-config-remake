@@ -64,6 +64,11 @@
     };
 
     impermanence.url = "github:nix-community/impermanence";
+
+    fps = {
+      url = "github:wamserma/flake-programs-sqlite";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs = { flake-parts, ... } @ inputs:

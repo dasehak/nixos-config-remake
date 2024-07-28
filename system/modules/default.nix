@@ -2,12 +2,15 @@
 , ...
 }:
 
+with inputs;
+
 {
   imports = [
-    inputs.chaotic.nixosModules.default
-    inputs.sops-nix.nixosModules.sops
+    chaotic.nixosModules.default
+    sops-nix.nixosModules.sops
+    fps.nixosModules.programs-sqlite
 
-    inputs.stylix.nixosModules.stylix
+    stylix.nixosModules.stylix
     ../../modules/stylix
 
     ./locales
