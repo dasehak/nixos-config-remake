@@ -10,9 +10,33 @@ let
   cfg = config.module.firefox;
 
   proxyIP = "127.0.0.1";
-  httpPort = 2081;
-  socksPort = 9050;
+  httpPort = "2081";
+  socksPort = "9050";
   DoHUrl = "https://dns.adguard-dns.com/dns-query";
+  extensions = with pkgs.nur.repos.rycee.firefox-addons; [
+    ublock-origin
+    darkreader
+    stylus
+    firefox-color
+    decentraleyes
+    privacy-badger
+    don-t-fuck-with-paste
+    noscript
+    libredirect
+    clearurls
+    canvasblocker
+  ];
+  noProxyOn = [
+    ".gosuslugi.ru"
+    ".ya.cc"
+    ".yandex.ru"
+    ".yandex.net"
+    ".yastatic.net"
+    "kinopoisk.ru"
+    "yadi.sk"
+    "di.sk"
+    "192.168.1.0/24"
+  ];
 in {
   options = {
     module.firefox.enable = mkEnableOption "Enables firefox";
@@ -21,99 +45,178 @@ in {
   config = mkIf cfg.enable {
     programs.firefox = {
       enable = true;
-      profiles.dasehak = {
-        extensions = with pkgs.nur.repos.rycee.firefox-addons; [
-          ublock-origin
-          darkreader
-          stylus
-          firefox-color
-          decentraleyes
-          privacy-badger
-          don-t-fuck-with-paste
-          noscript
-          libredirect
-          clearurls
-          canvasblocker
-        ];
-        settings = {
+      policies = {
+        BlockAboutAddons = true;
+        BlockAboutConfig = true;
+        BlockAboutProfiles = true;
+        BlockAboutSupport = true;
+        Cookies = {
+          Behavior = "reject-tracker-and-partition-foreign";
+        };
+        DisableBuiltinPDFViewer = true;
+        DisableFeedbackCommands = true;
+        DisableFirefoxAccounts = true;
+        DisableFirefoxScreenshots = true;
+        DisableFirefoxStudies = true;
+        DisableFormHistory = true;
+        DisablePasswordReveal = true;
+        DisablePocket = true;
+        DisableProfileImport = true;
+        DisableSetDesktopBackground = true;
+        DisableTelemetry = true;
+        DNSOverHTTPS = {
+          Enabled = true;
+          ProviderURL = DoHUrl;
+          Locked = true;
+        };
+        DontCheckDefaultBrowser = true;
+        EnableTrackingProtection = {
+          Value = true;
+          Locked = true;
+          Cryptomining = true;
+          Fingerprinting = true;
+          EmailTracking = true;
+        };
+        FirefoxSuggest = {
+          WebSuggestions = false;
+          SponsoredSuggestions = false;
+          ImproveSuggest = false;
+          Locked = true;
+        };
+        FirefoxHome = {
+          Search = true;
+          TopSites = true;
+          SponsoredTopSites = false;
+          Highlights = false;
+          Pocket = false;
+          SponsoredPocket = false;
+          Snippets = false;
+          Locked = true;
+        };
+        HardwareAcceleration = true;
+        HttpsOnlyMode = "force_enabled";
+        NetworkPrediction = false;
+        OfferToSaveLogins = false;
+        PasswordManagerEnabled = false;
+        PostQuantumKeyAgreementEnabled = true;
+        Preferences = {
           browser = {
-            contentblocking.category = "strict";
+            contentblocking.category = {
+              Value = "strict";
+              Status = "locked";
+            };
             safebrowsing = {
-              downloads.enabled = false;
-              malware.enabled = false;
-              phishing.enabled = false;
-            };
-          };
-          dom.security = {
-            https_only_mode = true;
-            https_only_mode_ever_enabled = true;
-          };
-          geo.enabled = false;
-          media.navigator.enabled = false;
-          network = {
-            dns.disablePrefetch = true;
-            predictor.enabled = false;
-            prefetch-next = false;
-            proxy = {
-              backup = {
-                ssl = proxyIP;
-                ssl_port = httpPort;
+              downloads.enabled = {
+                Value = false;
+                Status = "locked";
               };
-              http = proxyIP;
-              http_port = httpPort;
-              no_proxies_on = [
-                ".gosuslugi.ru"
-                ".ya.cc"
-                ".yandex.ru"
-                ".yandex.net"
-                ".yastatic.net"
-                "kinopoisk.ru"
-                "yadi.sk"
-                "192.168.1.0/24"
-              ];
-              share_proxy_settings = true;
-              socks = proxyIP;
-              socks_port = socksPort;
-              ssl = proxyIP;
-              ssl_port = httpPort;
-              type = 1;
+              malware.enabled = {
+                Value = false;
+                Status = "locked";
+              };
+              phishing.enabled = {
+                Value = false;
+                Status = "locked";
+              };
             };
-            trr = {
-              custom_uri = DoHUrl;
-              mode = 3;
-              uri = DoHUrl;
+          };
+          geo.enabled = {
+            Value = false;
+            Status = "locked";
+          };
+          media.navigator.enabled = {
+            Value = false;
+            Status = "locked";
+          };
+          network = {
+            predictor.enabled = {
+              Value = false;
+              Status = "locked";
+            };
+            prefetch-next = {
+              Value = false;
+              Status = "locked";
             };
           };
           privacy = {
-            annotate_channels.strict_list.enabled = true;
-            bounceTrackingProtection.hasMigratedUserActivationData = true;
-            donottrackheader.enabled = true;
-            fingerprintingProtection = true;
+            annotate_channels.strict_list.enabled = {
+              Value = true;
+              Status = "locked";
+            };
+            bounceTrackingProtection.hasMigratedUserActivationData = {
+              Value = true;
+              Status = "locked";
+            };
+            donottrackheader.enabled = {
+              Value = true;
+              Status = "locked";
+            };
+            fingerprintingProtection = {
+              Value = true;
+              Status = "locked";
+            };
             firstparty.isolate = {
-              block_post_message = true;
-              use_site = true;
+              block_post_message = {
+                Value = true;
+                Status = "locked";
+              };
+              use_site = {
+                Value = true;
+                Status = "locked";
+              };
             };
             globalprivacycontrol = {
-              enabled = true;
-              was_ever_enabled = true;
+              enabled = {
+                Value = true;
+                Status = "locked";
+              };
+              was_ever_enabled = {
+                Value = true;
+                Status = "locked";
+              };
             };
-            query_stripping.enabled = true;
-            resistFingerprinting = true;
-            trackingprotection = {
-              enabled = true;
-              emailtracking.enabled = true;
-              socialtracking.enabled = true;
+            query_stripping.enabled = {
+              Value = true;
+              Status = "locked";
             };
-            userContext = {
-              enabled = true;
-              extension = "CanvasBlocker@kkapsner.de";
-              ui.enabled = true;
+            resistFingerprinting = {
+              Value = true;
+              Status = "locked";
             };
           };
-          toolkit.telemetry = {
-            cachedClientID = "c0ffeec0-ffee-c0ff-eec0-ffeec0ffeec0";
-            reportingpolicy.firstRun = false;
+        };
+        Proxy = {
+          Mode = "manual";
+          Locked = true;
+          HTTPProxy = "${proxyIP}:${httpPort}";
+          UseHTTPProxyForAllProtocols = true;
+          SOCKSProxy = "${proxyIP}:${socksPort}";
+          SOCKSVersion = 5;
+          Passthrough = noProxyOn;
+          UseProxyForDNS = true;
+        };
+        UserMessaging = {
+          ExtensionRecommendations = false;
+          FeatureRecommendations = false;
+          UrlbarInterventions = false;
+          SkipOnboarding = true;
+          MoreFromMozilla = true;
+          Locked = true;
+        };
+        DefaultDownloadDirectory = "\${home}/downloads";
+      };
+      profiles.dasehak = {
+        extensions = extensions;
+        search = {
+          default = "4get.ducks.party";
+          engines = {
+            "4get.ducks.party" = {
+              urls = [{ tempalte = "https://4get.ducks.party/api/v1/ac?s={searchTerms}&scraper=google"; }];
+              iconUpdateURL = "https://4get.ducks.party/favicon.ico";
+              updateInterval = 24 * 60 * 60 * 1000;
+            };
           };
+          force = true;
         };
       };
     };
