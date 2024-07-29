@@ -103,6 +103,7 @@ in {
         };
         antivirusFullScan = {
           description = "scan all directories for suspect files";
+          wants = [ "network-online.target" ];
           after = [ "network-online.target" ];
           serviceConfig = {
             Type = "oneshot";
