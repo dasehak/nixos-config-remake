@@ -18,6 +18,7 @@ with lib;
     ./plasma
     ./hyprland
     ./sshd
+    ./libinput
   ];
 }
 

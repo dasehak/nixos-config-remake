@@ -47,6 +47,7 @@
       xserver.enable   = true;
       zram.enable      = true;
       sshd.enable      = true;
+      libinput.enable  = true;
     };
   };
 }

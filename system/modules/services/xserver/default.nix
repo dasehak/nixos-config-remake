@@ -17,8 +17,6 @@ in {
     services = {
       xserver = {
         enable = true;
-        libinput.enable = true;
-
         xkb = {
           layout = "us";
           variant = "";
