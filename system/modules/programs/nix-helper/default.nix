@@ -17,11 +17,6 @@ in {
     programs.nh = {
       enable = true;
       flake = "/home/${username}/sources/nixos-config-remake";
-
-      clean = {
-        enable = true;
-        extraArgs = "--keep-since 7d --keep 5";
-      };
     };
   };
 }
