@@ -41,7 +41,6 @@ in {
         "randomize_kstack_offset=on"
         "vsyscall=none"
         "random.trust_cpu=off"
-        "lockdown=confidentiality"
       ];
 
       blacklistedKernelModules = [
