@@ -24,6 +24,10 @@ in {
         sddm = {
           enable = true;
           theme = "catppuccin-mocha";
+          wayland = {
+            enable = true;
+            compositor = "kwin";
+          };
         };
         defaultSession = "plasma";
       };
