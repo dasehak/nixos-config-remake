@@ -96,6 +96,7 @@ in {
       direnv
       nix-direnv
       nixd
+      nixpkgs-fmt
 
       # Chats
       vesktop
