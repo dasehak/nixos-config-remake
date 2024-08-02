@@ -212,7 +212,7 @@ in {
           default = "4get.ducks.party";
           engines = {
             "4get.ducks.party" = {
-              urls = [{ tempalte = "https://4get.ducks.party/api/v1/ac?s={searchTerms}&scraper=google"; }];
+              urls = [{ template = "https://4get.ducks.party/api/v1/ac?s={searchTerms}&scraper=google"; }];
               iconUpdateURL = "https://4get.ducks.party/favicon.ico";
               updateInterval = 24 * 60 * 60 * 1000;
             };
