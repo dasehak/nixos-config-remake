@@ -21,7 +21,7 @@ with inputs;
     ./timedate
     ./users
     ./variables
-    ./virtualization
+    ./virtualisation
   ];
 }
 

@@ -16,7 +16,13 @@
     timedate.enable                = true;
     users.enable                   = true;
     variables.enable               = true;
-    virtualisation.enable          = true;
+
+    virtualisation = {
+      docker.enable          = true;
+      libvirtd.enable        = true;
+      virt-manager.enable    = true;
+      virtualbox-host.enable = true;
+    };
 
     programs = {
       systemPackages.enable = true;

@@ -14,7 +14,6 @@
     timedate.enable                = true;
     users.enable                   = true;
     variables.enable               = true;
-    virtualisation.enable          = false;
 
     programs = {
       systemPackages.enable = true;
