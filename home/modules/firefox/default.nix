@@ -67,6 +67,7 @@ in {
         DNSOverHTTPS = {
           Enabled = true;
           ProviderURL = DoHUrl;
+          Fallback = false;
           Locked = true;
         };
         DontCheckDefaultBrowser = true;
