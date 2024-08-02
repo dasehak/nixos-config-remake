@@ -1,6 +1,7 @@
 { lib
 , config
 , hostname
+, inputs
 , ...
 }:
 
@@ -9,6 +10,8 @@ with lib;
 let
   cfg = config.module.security.sops;
 in {
+  imports = [ inputs.sops-nix.nixosModules.sops ];
+
   options = {
     module.security.sops.enable = mkEnableOption "Enables sops's keys";
   };
