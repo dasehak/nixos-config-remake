@@ -26,6 +26,7 @@ in {
         catppuccin.catppuccin-vsc-icons
         eamodio.gitlens
         bbenoist.nix
+        jnoortheen.nix-ide
       ];
 
       userSettings = {
