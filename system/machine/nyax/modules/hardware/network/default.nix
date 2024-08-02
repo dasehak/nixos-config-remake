@@ -14,6 +14,12 @@ _:
 
     firewall = {
       enable = true;
+      allowedTCPPorts = [
+        5446 # X-Ray MPE
+      ];
+      allowedUDPPorts = [
+        5446 # X-Ray MPE
+      ];
       allowedTCPPortRanges = [
         { from = 1714; to = 1764; } # KDE Connect
       ];
