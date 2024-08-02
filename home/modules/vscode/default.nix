@@ -27,6 +27,7 @@ in {
         eamodio.gitlens
         bbenoist.nix
         jnoortheen.nix-ide
+        streetsidesoftware.code-spell-checker
       ];
 
       userSettings = {
