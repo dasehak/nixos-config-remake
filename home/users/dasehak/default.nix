@@ -95,6 +95,7 @@ in {
       godot_4
       direnv
       nix-direnv
+      nixd
 
       # Chats
       vesktop
