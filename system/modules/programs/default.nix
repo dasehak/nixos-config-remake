@@ -24,12 +24,8 @@ with lib;
     gnupg.enable      = mkDefault true;
     hm.enable         = mkDefault true;
     nh.enable         = mkDefault true;
-    kdeconnect.enable = mkDefault false;
     mtr.enable        = mkDefault true;
-    xdg-portal.enable = mkDefault false;
     fish.enable       = mkDefault true;
-    steam.enable      = mkDefault false;
-    gamemode.enable   = mkDefault false;
   };
 }
 

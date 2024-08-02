@@ -33,13 +33,13 @@
 
     security = {
       hardening = {
-        enable = true;
+        enable        = true;
         cachyosKernel = true;
       };
       apparmor.enable  = true;
       antivirus.enable = true;
       usbguard = {
-        enable = true;
+        enable   = true;
         ruleFile = config.sops.secrets.nyax_usb_rules.path;
       };
     };
@@ -48,7 +48,6 @@
       bluetooth.enable = true;
       fwupd.enable     = true;
       printing.enable  = true;
-      hyprland.enable  = false;
       plasma.enable    = true;
       xserver.enable   = true;
       zram.enable      = true;
