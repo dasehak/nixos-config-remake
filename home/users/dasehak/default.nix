@@ -88,6 +88,7 @@ in {
       inputs.pollymc.packages.${pkgs.system}.pollymc
       inputs.nix-gaming.packages.${pkgs.system}.wine-ge
       inputs.nix-gaming.packages.${pkgs.system}.wine-discord-ipc-bridge
+      openttd
 
       # Dev
       vscode
