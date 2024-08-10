@@ -159,11 +159,11 @@
         "yafas": "yafas"
       },
       "locked": {
-        "lastModified": 1723215873,
-        "narHash": "sha256-LuSdVL3GztsIERwdJdr4EeBP9Ris8jbdyL+AlIn8G48=",
+        "lastModified": 1723272728,
+        "narHash": "sha256-BRltAU2jH2KPxV2teYLHFfIH9zI53nfUVCt83QYDkQM=",
         "owner": "chaotic-cx",
         "repo": "nyx",
-        "rev": "d756ef86407a02a6749cf4231acbc4cbf7448c61",
+        "rev": "0f0e87dfc456042372334558c30ee3ad20023bb7",
         "type": "github"
       },
       "original": {
@@ -505,11 +505,11 @@
         "utils": "utils"
       },
       "locked": {
-        "lastModified": 1723215143,
-        "narHash": "sha256-niWd6qGSPhUYMYPm7fjnnlk+tRPAgH7fFRQ/8zuZHN0=",
+        "lastModified": 1723300350,
+        "narHash": "sha256-7l78IMQZUgieibGeamn+6Bt5V4/qyZfzjbNx1uNrwpY=",
         "owner": "wamserma",
         "repo": "flake-programs-sqlite",
-        "rev": "dbea37d42ec17f11e97fb82bff26c84bf858ae22",
+        "rev": "daa712fea4ed21f60aafd869c6de019cf9fd282d",
         "type": "github"
       },
       "original": {
@@ -771,11 +771,11 @@
         "xdph": "xdph"
       },
       "locked": {
-        "lastModified": 1723224800,
-        "narHash": "sha256-2b+cECwR+3FL/ikuZnXE94H8bXdlnYUbhmi1KNpD/tc=",
+        "lastModified": 1723241066,
+        "narHash": "sha256-et+BwLETF5e/9jBHK2GnVh6WGjRztRBThtllMezCvcM=",
         "ref": "refs/heads/main",
-        "rev": "8b37e81374928856d8fd859b95a62c8bf4211901",
-        "revCount": 5073,
+        "rev": "4fdc0d55e4b44bb5300679025d2378fb6de0cae4",
+        "revCount": 5074,
         "submodules": true,
         "type": "git",
         "url": "https://github.com/hyprwm/Hyprland"
@@ -1171,11 +1171,11 @@
     },
     "nixpkgs": {
       "locked": {
-        "lastModified": 1722813957,
-        "narHash": "sha256-IAoYyYnED7P8zrBFMnmp7ydaJfwTnwcnqxUElC1I26Y=",
+        "lastModified": 1723175592,
+        "narHash": "sha256-M0xJ3FbDUc4fRZ84dPGx5VvgFsOzds77KiBMW/mMTnI=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "cb9a96f23c491c081b38eab96d22fa958043c9fa",
+        "rev": "5e0ca22929f3342b19569b21b2f3462f053e497b",
         "type": "github"
       },
       "original": {
@@ -1297,11 +1297,11 @@
     },
     "nixpkgs_4": {
       "locked": {
-        "lastModified": 1723197662,
-        "narHash": "sha256-NSvqhZYv0LY2eh0a3yoAvJjGlWeOLSjmPpivSnY9pXg=",
+        "lastModified": 1723274555,
+        "narHash": "sha256-gDCMNBju0BwYHUPp6RVVnqE0VnbXl53VMk21OT9fkFw=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "0048951e7a3eba3dce8bf6ba893390d29375c5d0",
+        "rev": "33c40979a7ccf487d6c0e1a420ecf8e4ac2b676e",
         "type": "github"
       },
       "original": {
@@ -1358,11 +1358,11 @@
         "treefmt-nix": "treefmt-nix"
       },
       "locked": {
-        "lastModified": 1723192118,
-        "narHash": "sha256-juQM/w6GY8aHQCBazvyMEPlfnt4pB+ja7WDQOQQYyEY=",
+        "lastModified": 1723230145,
+        "narHash": "sha256-FyjcuYZMqXdiKOXkHaIC2ubag+TPV9Z12urC/sdVI6A=",
         "owner": "nix-community",
         "repo": "nixvim",
-        "rev": "c46bd820adabaf23acbccbbd226b1941566acb51",
+        "rev": "4852f94f8ccae551514df0092a077014bafb95ca",
         "type": "github"
       },
       "original": {
@@ -1373,11 +1373,11 @@
     },
     "nur": {
       "locked": {
-        "lastModified": 1723229499,
-        "narHash": "sha256-LlcgmzEVDUa5pA1x50nYp1QRUUmTqZvHmwZAIj6Xqus=",
+        "lastModified": 1723307312,
+        "narHash": "sha256-UcvsWK+vM/Cc8lGlqDpSa+75hAQY0LWa6n06VpVZCGQ=",
         "owner": "nix-community",
         "repo": "NUR",
-        "rev": "fd42f83c561adde6bcc9e352f4bb8644081c411b",
+        "rev": "0572e827f7bde034f478125ea5a932ff32715616",
         "type": "github"
       },
       "original": {
@@ -1580,11 +1580,11 @@
         "nix-filter": "nix-filter_2"
       },
       "locked": {
-        "lastModified": 1723227440,
-        "narHash": "sha256-2AplDQvMfKmsMXMLaGr7aiaXz0y49JKRC3Evcexd19g=",
+        "lastModified": 1723291145,
+        "narHash": "sha256-o5QJ7F4r397c08AlFh7Fi6VbyWUjIOsmTJg1B4lIDSM=",
         "owner": "Duckonaut",
         "repo": "split-monitor-workspaces",
-        "rev": "1a4eba8389b69ae8402ade658a5a9f447dbf8b31",
+        "rev": "7f614e3bc8f3284ebe799f741217e8ce43db9b3d",
         "type": "github"
       },
       "original": {
@@ -1875,11 +1875,11 @@
         "ymExe": "ymExe"
       },
       "locked": {
-        "lastModified": 1722991074,
-        "narHash": "sha256-dm0ONxDzkfsXwHiOw4K1D/c6IsfOJkksNyVf/uWh+OA=",
+        "lastModified": 1723250257,
+        "narHash": "sha256-+JkwyQd9EFSczQHcaLYdlacNmjfEzSqfFiEUI2IuLs0=",
         "owner": "cucumber-sp",
         "repo": "yandex-music-linux",
-        "rev": "6ab6b6eefff499ae4f6256b9a049efc2e1195ad3",
+        "rev": "b7ad3a1c637a17c6cc31f5bf0a5f06e6671d9720",
         "type": "github"
       },
       "original": {
@@ -1891,13 +1891,13 @@
     "ymExe": {
       "flake": false,
       "locked": {
-        "narHash": "sha256-nMmUZov3j/vEs9+/5dbP1xSx80U9plrkqWkAtUTgeo8=",
+        "narHash": "sha256-2k/5pJa5VVJ+s/XF+2RTCE3n6YwA1d37mHO93wAWcOw=",
         "type": "file",
-        "url": "https://music-desktop-application.s3.yandex.net/stable/Yandex_Music_x64_5.9.4.exe"
+        "url": "https://music-desktop-application.s3.yandex.net/stable/Yandex_Music_x64_5.10.2.exe"
       },
       "original": {
         "type": "file",
-        "url": "https://music-desktop-application.s3.yandex.net/stable/Yandex_Music_x64_5.9.4.exe"
+        "url": "https://music-desktop-application.s3.yandex.net/stable/Yandex_Music_x64_5.10.2.exe"
       }
     }
   },
