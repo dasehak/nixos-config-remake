@@ -27,6 +27,7 @@ with inputs;
     ./obs-studio
     ./syncthing
     ./yandex-music
+    ./plasma
   ];
 }
 

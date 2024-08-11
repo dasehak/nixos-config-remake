@@ -46,6 +46,7 @@ in {
     obs-studio.enable     = true;
     syncthing.enable      = true;
     yandex-music.enable   = false;
+    plasma.enable         = true;
 
     nix-config = {
       enable                     = true;
