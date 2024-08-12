@@ -51,6 +51,7 @@ in {
                     "preferred://filemanager"
                     "preferred://browser"
                     "applications:vesktop.desktop"
+                    "applications:org.kde.konsole.desktop"
                   ];
                   showOnlyCurrentActivity = false;
                   showOnlyCurrentDesktop = false;
