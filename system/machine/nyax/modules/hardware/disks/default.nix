@@ -35,14 +35,11 @@ _:
                 };
               };
             };
-            windows = {
+            fedora = {
               size = "100%";
               content = {
-                type = "filesystem";
-                format = "ntfs";
-                extraArgs = [
-                  "-Q"
-                ];
+                type = "lvm_pv";
+                vg = "fedoryax_vg";
               };
             };
           };
@@ -87,6 +84,25 @@ _:
                 "defaults"
                 "compress-force=zstd:3"
               ];
+            };
+          };
+        };
+      };
+      fedoryax_vg = {
+        type = "lvm_vg";
+        lvs = {
+          root = {
+            size = "50G";
+            content = {
+              type = "filesystem";
+              format = "btrfs";
+            };
+          };
+          home = {
+            size = "100%FREE";
+            content = {
+              type = "filesystem";
+              format = "btrfs";
             };
           };
         };
