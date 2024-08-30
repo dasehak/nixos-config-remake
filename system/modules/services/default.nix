@@ -19,6 +19,7 @@ with lib;
     ./hyprland
     ./sshd
     ./libinput
+    ./flatpak
   ];
 }
 

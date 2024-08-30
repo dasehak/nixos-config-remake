@@ -53,6 +53,7 @@
       zram.enable      = true;
       sshd.enable      = true;
       libinput.enable  = true;
+      flatpak.enable   = true;
     };
   };
 }

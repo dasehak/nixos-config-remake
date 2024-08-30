@@ -60,6 +60,7 @@ in {
       kpmcore
       neochat
       plasma-vault
+      discover
     ]);
   };
 }

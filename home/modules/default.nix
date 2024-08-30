@@ -9,6 +9,7 @@ with inputs;
     stylix.homeManagerModules.stylix
     nur.hmModules.nur
     yandex-music.homeManagerModules.default
+    nix-flatpak.homeManagerModules.nix-flatpak
     ../../modules/stylix
 
     ./firefox
@@ -28,6 +29,7 @@ with inputs;
     ./syncthing
     ./yandex-music
     ./plasma
+    ./flatpak
   ];
 }
 

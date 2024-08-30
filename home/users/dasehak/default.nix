@@ -47,6 +47,7 @@ in {
     syncthing.enable      = true;
     yandex-music.enable   = false;
     plasma.enable         = true;
+    flatpak.enable        = true;
 
     nix-config = {
       enable                     = true;
@@ -129,6 +130,7 @@ in {
       unrar
       nekoray
       gparted
+      flatpak
     ];
   };
 }
