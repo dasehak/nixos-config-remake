@@ -78,6 +78,9 @@
       inputs.nixpkgs.follows = "nixpkgs";
       inputs.home-manager.follows = "home-manager";
     };
+
+    ayugram-desktop.url = "git+https://github.com/kaeeraa/ayugram-desktop?submodules=1";
+
     nix-flatpak.url = "github:gmodena/nix-flatpak";
   };
 

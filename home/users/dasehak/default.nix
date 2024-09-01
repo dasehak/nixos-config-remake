@@ -107,10 +107,12 @@ in {
       nixpkgs-fmt
 
       # Chats
+materialgram
       vesktop
       cinny-desktop
       mumble
-      nur.repos.mur.ayugram-desktop
+      # nur.repos.mur.ayugram-desktop
+      inputs.ayugram-desktop.packages.${pkgs.system}.default
 
       # Icons
       catppuccin-papirus-folders
