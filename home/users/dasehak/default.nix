@@ -137,6 +137,7 @@ materialgram
       unrar
       nekoray
       gparted
+      steam-run
       flatpak
     ];
   };
