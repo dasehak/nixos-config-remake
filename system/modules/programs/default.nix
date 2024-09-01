@@ -17,6 +17,7 @@ with lib;
     ./dconf
     ./steam
     ./gamemode
+    ./adb
   ];
 
   module.programs = {

@@ -29,6 +29,7 @@
       steam.enable          = true;
       gamemode.enable       = true;
       kdeconnect.enable     = true;
+      adb.enable            = true;
     };
 
     security = {
