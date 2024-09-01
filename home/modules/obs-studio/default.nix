@@ -19,6 +19,8 @@ in {
       enable = true;
       plugins = with pkgs.obs-studio-plugins; [
         droidcam-obs
+        obs-vkcapture
+        obs-pipewire-audio-capture
       ];
     };
   };
