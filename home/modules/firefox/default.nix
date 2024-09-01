@@ -46,7 +46,6 @@ in {
     programs.firefox = {
       enable = true;
       policies = {
-        BlockAboutAddons = true;
         BlockAboutConfig = true;
         BlockAboutProfiles = true;
         BlockAboutSupport = true;
