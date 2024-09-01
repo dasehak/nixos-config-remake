@@ -40,7 +40,13 @@ in {
     };
 
     nix = optionalAttrs cfg.useNixPackageManagerConfig ({
-      registry.s.flake = inputs.self;
+      registry = {
+        s.flake = inputs.self;
+        nixpkgs.flake = inputs.nixpkgs;
+        nixpkgs-unstable.flake = inputs.nixpkgs-unstable;
+        nixpkgs-stable.flake = inputs.nixpkgs-stable;
+        nixpkgs-master.flake = inputs.nixpkgs-master;
+      };
       package = pkgs.lix;
 
       settings = {
