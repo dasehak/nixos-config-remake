@@ -61,6 +61,9 @@ in {
       neochat
       plasma-vault
       discover
+      kaccounts-providers
+      kaccounts-integration
+      qtwebengine
     ]);
   };
 }
