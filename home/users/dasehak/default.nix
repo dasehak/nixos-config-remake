@@ -91,6 +91,11 @@ in {
       inputs.nix-gaming.packages.${pkgs.system}.wine-ge
       inputs.nix-gaming.packages.${pkgs.system}.wine-discord-ipc-bridge
       openttd
+      warzone2100
+      xonotic-glx
+      mindustry
+      gzdoom
+      superTuxKart
 
       # Dev
       vscode
