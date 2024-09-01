@@ -208,11 +208,11 @@ in {
       profiles.dasehak = {
         extensions = extensions;
         search = {
-          default = "4get.ducks.party";
+          default = "1man1jar";
           engines = {
-            "4get.ducks.party" = {
-              urls = [{ template = "https://4get.ducks.party/web?s={searchTerms}"; }];
-              iconUpdateURL = "https://4get.ducks.party/favicon.ico";
+            "1man1jar" = {
+              urls = [{ template = "https://4get.kontrkultura.space/web?s={searchTerms}"; }];
+              iconUpdateURL = "https://4get.kontrkultura.space/favicon.ico";
               updateInterval = 24 * 60 * 60 * 1000;
             };
           };
