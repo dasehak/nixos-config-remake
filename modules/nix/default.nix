@@ -33,6 +33,13 @@ in {
     nixpkgs = {
       config = {
         allowUnfree = true;
+        permittedInsecurePackages = [
+          "olm-3.2.16"
+          "cinny-4.1.0"
+          "cinny-desktop-4.1.0"
+          "cinny-unwrapped-4.1.0"
+        ];
+        android_sdk.accept_license = true;
       };
       overlays = [
         inputs.nur.overlay
