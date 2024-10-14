@@ -24,8 +24,10 @@ in {
   ];
 
   stylix.targets = {
-    vscode.enable = false;
-    kde.enable    = false;
+    vscode.enable    = false;
+    kde.enable       = false;
+    hyprland.enable  = false;
+    hyprpaper.enable = false;
   };
 
   module = {
@@ -99,17 +101,18 @@ in {
 
       # Dev
       vscode
-      zed-editor
       godot_4
       direnv
       nix-direnv
       nixd
       nixpkgs-fmt
+      android-studio
 
       # Chats
-materialgram
+      materialgram
       vesktop
-      cinny-desktop
+      # cinny-desktop
+      element-desktop
       mumble
       # nur.repos.mur.ayugram-desktop
       inputs.ayugram-desktop.packages.${pkgs.system}.default
@@ -127,7 +130,6 @@ materialgram
       hyperfine
       tgpt
       strawberry
-      tor-browser-bundle-bin
       krita
       kdenlive
       nicotine-plus
