@@ -12,7 +12,7 @@ let
   proxyIP = "127.0.0.1";
   httpPort = "2081";
   socksPort = "9050";
-  DoHUrl = "https://dns.adguard-dns.com/dns-query";
+  DoHUrl = "https://freedns.controld.com/uncensored";
   extensions = with pkgs.nur.repos.rycee.firefox-addons; [
     ublock-origin
     darkreader
@@ -25,6 +25,10 @@ let
     libredirect
     clearurls
     canvasblocker
+    sponsorblock
+    dearrow
+    enhancer-for-youtube
+    return-youtube-dislikes
   ];
   noProxyOn = [
     ".gosuslugi.ru"
@@ -184,6 +188,7 @@ in {
               Status = "locked";
             };
           };
+          widget.use-xdg-desktop-portal = true;
         };
         Proxy = {
           Mode = "manual";
