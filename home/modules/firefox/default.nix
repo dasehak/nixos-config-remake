@@ -41,7 +41,8 @@ let
     "di.sk"
     "192.168.1.0/24"
   ];
-in {
+in
+{
   options = {
     module.firefox.enable = mkEnableOption "Enables firefox";
   };
@@ -50,9 +51,8 @@ in {
     programs.firefox = {
       enable = true;
       policies = {
-        BlockAboutConfig = true;
+        BlockAboutConfig = false;
         BlockAboutProfiles = true;
-        BlockAboutSupport = true;
         Cookies = {
           Behavior = "reject-tracker-and-partition-foreign";
         };
@@ -68,7 +68,7 @@ in {
         DisableSetDesktopBackground = true;
         DisableTelemetry = true;
         DNSOverHTTPS = {
-          Enabled = true;
+          Enabled = false;
           ProviderURL = DoHUrl;
           Fallback = false;
           Locked = true;
@@ -102,7 +102,7 @@ in {
         NetworkPrediction = false;
         OfferToSaveLogins = false;
         PasswordManagerEnabled = false;
-        PostQuantumKeyAgreementEnabled = true;
+        PostQuantumKeyAgreementEnabled = false;
         Preferences = {
           browser = {
             contentblocking.category = {
