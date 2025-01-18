@@ -52,11 +52,6 @@
 
     nix-gaming.url = "github:fufexan/nix-gaming";
 
-    pollymc = {
-      url = "github:fn2006/PollyMC";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
     disko = {
       url = "github:nix-community/disko";
       inputs.nixpkgs.follows = "nixpkgs";
