@@ -8,7 +8,7 @@ with inputs;
   imports = [
     stylix.homeManagerModules.stylix
     nur.hmModules.nur
-    yandex-music.homeManagerModules.default
+    
     nix-flatpak.homeManagerModules.nix-flatpak
     ../../modules/stylix
 
@@ -27,7 +27,6 @@ with inputs;
     ./arrpc
     ./obs-studio
     ./syncthing
-    ./yandex-music
     ./plasma
     ./flatpak
   ];
