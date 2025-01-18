@@ -100,6 +100,7 @@ in
       gzdoom
       superTuxKart
       prismlauncher
+      steam-run
 
       # Dev
       vscode
@@ -138,8 +139,6 @@ in
       wget
       unrar
       nekoray
-      gparted
-      steam-run
       flatpak
     ];
   };

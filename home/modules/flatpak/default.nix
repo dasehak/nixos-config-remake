@@ -18,6 +18,9 @@ in
       enable = true;
       uninstallUnmanaged = true;
       update.onActivation = true;
+      packages = [
+        { appId = "com.valvesoftware.Steam"; origin = "flathub"; }
+      ];
     };
   };
 }
