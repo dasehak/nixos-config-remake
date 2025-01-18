@@ -1,5 +1,6 @@
 { lib
 , config
+, pkgs
 , ...
 }:
 
@@ -16,6 +17,7 @@ in
   config = mkIf cfg.enable {
     programs.btop = {
       enable = true;
+      package = pkgs.btop-rocm;
     };
   };
 }
