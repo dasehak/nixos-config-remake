@@ -7,6 +7,7 @@
     nixpkgs-stable.url = "github:NixOS/nixpkgs/release-24.05";
     nixpkgs-master.url = "github:NixOS/nixpkgs";
     nixpkgs-blender-3-6-5.url = "github:nixos/nixpkgs/a71323f68d4377d12c04a5410e214495ec598d4c";
+    nixpkgs-materialgram.url = "github:nixos/nixpkgs/2b58bfe2c0d73341362870a0f1e50b2b8f2e4b84";
     chaotic.url = "github:chaotic-cx/nyx";
     nur.url = "github:nix-community/NUR";
 

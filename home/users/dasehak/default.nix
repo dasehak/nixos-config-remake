@@ -110,13 +110,11 @@ in
       android-studio
 
       # Chats
-      materialgram
+      inputs.nixpkgs-materialgram.legacyPackages.${pkgs.system}.materialgram
       vesktop
       # cinny-desktop
       element-desktop
       mumble
-      # nur.repos.mur.ayugram-desktop
-      inputs.ayugram-desktop.packages.${pkgs.system}.default
 
       # Icons
       catppuccin-papirus-folders
