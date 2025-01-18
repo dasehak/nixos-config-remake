@@ -8,7 +8,8 @@ with lib;
 
 let
   cfg = config.module.services.libinput;
-in {
+in
+{
   options = {
     module.services.libinput.enable = mkEnableOption "Enable libinput";
   };

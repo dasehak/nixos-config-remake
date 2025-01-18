@@ -9,7 +9,8 @@ with lib;
 
 let
   cfg = config.module.syncthing;
-in {
+in
+{
   options = {
     module.syncthing.enable = mkEnableOption "Enables Syncthing";
   };

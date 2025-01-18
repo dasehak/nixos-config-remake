@@ -8,7 +8,8 @@ with lib;
 
 let
   cfg = config.module.services.xserver;
-in {
+in
+{
   options = {
     module.services.xserver.enable = mkEnableOption "Enable xserver";
   };

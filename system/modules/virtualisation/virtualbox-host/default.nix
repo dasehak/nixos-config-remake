@@ -8,7 +8,8 @@ with lib;
 
 let
   cfg = config.module.virtualisation.virtualbox-host;
-in {
+in
+{
   options = {
     module.virtualisation.virtualbox-host.enable = mkEnableOption "Enables VirtualBox host";
   };

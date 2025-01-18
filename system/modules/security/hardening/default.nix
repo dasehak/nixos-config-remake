@@ -8,7 +8,8 @@ with lib;
 
 let
   cfg = config.module.security.hardening;
-in {
+in
+{
   options = {
     module.security.hardening = {
       enable = mkEnableOption "Enables hardening";

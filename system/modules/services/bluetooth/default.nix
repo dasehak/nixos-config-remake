@@ -8,7 +8,8 @@ with lib;
 
 let
   cfg = config.module.services.bluetooth;
-in {
+in
+{
   options = {
     module.services.bluetooth.enable = mkEnableOption "Enable bluetooth";
   };

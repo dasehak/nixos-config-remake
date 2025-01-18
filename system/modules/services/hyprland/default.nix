@@ -2,13 +2,15 @@
 , pkgs
 , lib
 , config
-, ...}:
+, ...
+}:
 
 with lib;
 
 let
   cfg = config.module.services.hyprland;
-in {
+in
+{
   options = {
     module.services.hyprland.enable = mkEnableOption "Enables hyprland";
   };

@@ -7,7 +7,8 @@ with lib;
 
 let
   cfg = config.module.services.sshd;
-in {
+in
+{
   options = {
     module.services.sshd.enable = mkEnableOption "Enable sshd";
   };

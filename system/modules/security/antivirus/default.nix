@@ -31,14 +31,15 @@ let
   ];
 
   securiteinfo_token = builtins.readFile ../../../../secrets/git/securiteinfo_token;
-in {
+in
+{
   options = {
     module.security.antivirus.enable = mkEnableOption "Enable antivirus";
   };
 
   config = mkIf cfg.enable {
     security.sudo = {
-      extraConfig  =
+      extraConfig =
       ''
         clamav ALL=(ALL) NOPASSWD: SETENV: ${pkgs.libnotify}/bin/notify-send
       '';

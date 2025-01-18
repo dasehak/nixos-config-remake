@@ -7,7 +7,8 @@ with lib;
 
 let
   cfg = config.module.services.printing;
-in {
+in
+{
   options = {
     module.services.printing.enable = mkEnableOption "Enable printing";
   };

@@ -7,7 +7,8 @@ with lib;
 
 let
   cfg = config.module.locales;
-in {
+in
+{
   options = {
     module.locales.enable = mkEnableOption "Enables locales";
   };

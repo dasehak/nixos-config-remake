@@ -8,7 +8,8 @@ with lib;
 
 let
   cfg = config.module.usbguard-notifier;
-in {
+in
+{
   options = {
     module.usbguard-notifier.enable = mkEnableOption "Enables usbguard-notifier";
   };

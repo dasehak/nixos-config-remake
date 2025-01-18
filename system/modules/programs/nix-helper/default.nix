@@ -8,7 +8,8 @@ with lib;
 
 let
   cfg = config.module.programs.nh;
-in {
+in
+{
   options = {
     module.programs.nh.enable = mkEnableOption "Enable Nix Helper";
   };

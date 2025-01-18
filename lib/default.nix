@@ -4,10 +4,10 @@
 }:
 
 let
-     printMessage = ''
-        ${builtins.toString "\n\Here is text for the context:\n"}
-     '';
-    in
+  printMessage = ''
+    ${builtins.toString "\n\Here is text for the context:\n"}
+  '';
+in
 {
   # Helper function for generating home-manager configs
   mkHome = { username ? "dasehak", hostname ? "nixos", isWorkstation ? false, platform ? "x86_64-linux" }:

@@ -9,7 +9,8 @@ with lib;
 
 let
   cfg = config.module.obs-studio;
-in {
+in
+{
   options = {
     module.obs-studio.enable = mkEnableOption "Enables obs-studio";
   };

@@ -7,7 +7,8 @@ with lib;
 
 let
   cfg = config.module.programs.gamemode;
-in {
+in
+{
   options = {
     module.programs.gamemode.enable = mkEnableOption "Enable gamemode";
   };

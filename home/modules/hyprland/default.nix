@@ -9,7 +9,8 @@ with lib;
 
 let
   cfg = config.module.hyprland;
-in {
+in
+{
   imports = [
     ./binds
   ];

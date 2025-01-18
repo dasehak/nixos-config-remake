@@ -7,7 +7,8 @@ with lib;
 
 let
   cfg = config.module.programs.mtr;
-in {
+in
+{
   options = {
     module.programs.mtr.enable = mkEnableOption "Enable mtr";
   };

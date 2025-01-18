@@ -7,7 +7,8 @@ with lib;
 
 let
   cfg = config.module.programs.steam;
-in {
+in
+{
   options = {
     module.programs.steam.enable = mkEnableOption "Enable Steam";
   };

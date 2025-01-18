@@ -8,7 +8,8 @@ with lib;
 
 let
   cfg = config.module.virtualisation.docker;
-in {
+in
+{
   options = {
     module.virtualisation.docker.enable = mkEnableOption "Enables Docker";
   };

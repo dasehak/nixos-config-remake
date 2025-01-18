@@ -7,7 +7,8 @@ with lib;
 
 let
   cfg = config.module.programs.fish;
-in {
+in
+{
   options = {
     module.programs.fish.enable = mkEnableOption "Enable fish";
   };

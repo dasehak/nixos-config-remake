@@ -8,7 +8,8 @@ with lib;
 
 let
   cfg = config.module.fastfetch;
-in {
+in
+{
   options = {
     module.fastfetch.enable = mkEnableOption "Enables fastfetch";
   };

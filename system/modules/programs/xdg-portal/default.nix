@@ -9,7 +9,8 @@ with lib;
 
 let
   cfg = config.module.programs.xdg-portal;
-in {
+in
+{
   options = {
     module.programs.xdg-portal.enable = mkEnableOption "Enable xdg-portal";
   };

@@ -7,7 +7,8 @@ with lib;
 
 let
   cfg = config.module.timedate;
-in {
+in
+{
   options = {
     module.timedate.enable = mkEnableOption "Enables timedate";
   };

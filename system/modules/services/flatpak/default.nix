@@ -8,7 +8,8 @@ with lib;
 
 let
   cfg = config.module.services.flatpak;
-in {
+in
+{
   options = {
     module.services.flatpak.enable = mkEnableOption "Enable flatpak";
   };

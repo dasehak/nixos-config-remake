@@ -9,7 +9,8 @@ with lib;
 
 let
   cfg = config.module.vscode;
-in {
+in
+{
   options = {
     module.vscode.enable = mkEnableOption "Enables VSCode";
   };

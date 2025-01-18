@@ -7,7 +7,8 @@ with lib;
 
 let
   cfg = config.module.services.cpu-autofreq;
-in {
+in
+{
   options = {
     module.services.cpu-autofreq.enable = mkEnableOption "Enable cpu-autofreq";
   };

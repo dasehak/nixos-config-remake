@@ -11,7 +11,8 @@ with lib;
 
 let
   inherit (pkgs.stdenv) isLinux;
-in {
+in
+{
   imports = [
     ../../../modules/nix
     # ../../modules/ssh
@@ -31,30 +32,30 @@ in {
   };
 
   module = {
-    firefox.enable  = isLinux && isWorkstation;
+    firefox.enable = isLinux && isWorkstation;
 
-    git.enable            = true;
-    btop.enable           = true;
-    fastfetch.enable      = true;
-    nvim.enable           = false;
-    fish.enable           = true;
-    vscode.enable         = true;
-    eza.enable            = true;
-    hyprland.enable       = false;
-    waybar.enable         = false;
-    wofi.enable           = false;
-    qt.enable             = false;
-    arrpc.enable          = true;
-    obs-studio.enable     = true;
-    syncthing.enable      = true;
-    yandex-music.enable   = false;
-    plasma.enable         = true;
-    flatpak.enable        = true;
+    git.enable = true;
+    btop.enable = true;
+    fastfetch.enable = true;
+    nvim.enable = true;
+    fish.enable = true;
+    vscode.enable = true;
+    eza.enable = true;
+    hyprland.enable = false;
+    waybar.enable = false;
+    wofi.enable = false;
+    qt.enable = false;
+    arrpc.enable = true;
+    obs-studio.enable = true;
+    syncthing.enable = true;
+    plasma.enable = true;
+    flatpak.enable = true;
+
 
     nix-config = {
-      enable                     = true;
+      enable = true;
       useNixPackageManagerConfig = true;
-      useGarbageCollection       = false;
+      useGarbageCollection = false;
     };
   };
 

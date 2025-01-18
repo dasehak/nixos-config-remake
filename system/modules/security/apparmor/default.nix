@@ -8,7 +8,8 @@ with lib;
 
 let
   cfg = config.module.security.apparmor;
-in {
+in
+{
   options = {
     module.security.apparmor.enable = mkEnableOption "Enables apparmor";
   };

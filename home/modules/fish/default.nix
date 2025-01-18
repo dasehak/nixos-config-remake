@@ -9,7 +9,8 @@ with lib;
 
 let
   cfg = config.module.fish;
-in {
+in
+{
   options = {
     module.fish.enable = mkEnableOption "Enables fish";
   };

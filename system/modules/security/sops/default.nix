@@ -9,7 +9,8 @@ with lib;
 
 let
   cfg = config.module.security.sops;
-in {
+in
+{
   imports = [ inputs.sops-nix.nixosModules.sops ];
 
   options = {
@@ -20,7 +21,7 @@ in {
     sops = {
       defaultSopsFile = ../../../../secrets/sops/secrets.yaml;
       age.sshKeyPaths = [ "/etc/ssh/ssh_host_ed25519_key" ];
-      secrets.nyax_usb_rules = {};
+      secrets.nyax_usb_rules = { };
     };
   };
 }

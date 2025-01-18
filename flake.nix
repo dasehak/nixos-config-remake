@@ -86,27 +86,28 @@
 
   outputs = { flake-parts, ... } @ inputs:
   let
-    linuxArch          = "x86_64-linux";
-    stateVersion       = "24.11";
+      linuxArch = "x86_64-linux";
+      stateVersion = "24.11";
 
     libx = import ./lib { inherit inputs stateVersion; };
-  in flake-parts.lib.mkFlake { inherit inputs; } {
+    in
+    flake-parts.lib.mkFlake { inherit inputs; } {
     systems = [
       linuxArch
     ];
 
     flake = {
       nixosConfigurations = {
-        nyax  = libx.mkHost { hostname = "nyax"; username = "dasehak"; isWorkstation = true;  platform = linuxArch; };
-        qemux = libx.mkHost { hostname = "qemux"; username = "dasehak"; isWorkstation = true;  platform = linuxArch; };
+          nyax = libx.mkHost { hostname = "nyax"; username = "dasehak"; isWorkstation = true; platform = linuxArch; };
+          qemux = libx.mkHost { hostname = "qemux"; username = "dasehak"; isWorkstation = true; platform = linuxArch; };
       };
 
       homeConfigurations = {
-        "dasehak@nyax"  = libx.mkHome { hostname = "nyax";  username = "dasehak"; isWorkstation = true;  platform = linuxArch; };
-        "root@nyax"     = libx.mkHome { hostname = "nyax";  username = "root";   isWorkstation = true;  platform = linuxArch; };
+          "dasehak@nyax" = libx.mkHome { hostname = "nyax"; username = "dasehak"; isWorkstation = true; platform = linuxArch; };
+          "root@nyax" = libx.mkHome { hostname = "nyax"; username = "root"; isWorkstation = true; platform = linuxArch; };
 
-        "dasehak@qemux"  = libx.mkHome { hostname = "qemux";  username = "dasehak"; isWorkstation = true;  platform = linuxArch; };
-        "root@qemux"     = libx.mkHome { hostname = "qemux";  username = "root";   isWorkstation = true;  platform = linuxArch; };
+          "dasehak@qemux" = libx.mkHome { hostname = "qemux"; username = "dasehak"; isWorkstation = true; platform = linuxArch; };
+          "root@qemux" = libx.mkHome { hostname = "qemux"; username = "root"; isWorkstation = true; platform = linuxArch; };
       };
     };
   };

@@ -7,7 +7,8 @@ with lib;
 
 let
   cfg = config.module.security.sudo;
-in {
+in
+{
   options = {
     module.security.sudo.enable = mkEnableOption "Enables sudo";
   };

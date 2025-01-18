@@ -7,7 +7,8 @@ with lib;
 
 let
   cfg = config.module.arrpc;
-in {
+in
+{
   options = {
     module.arrpc.enable = mkEnableOption "Enables arrpc";
   };

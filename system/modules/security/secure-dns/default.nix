@@ -8,7 +8,8 @@ with lib;
 
 let
   cfg = config.module.security.secure-dns;
-in {
+in
+{
   options = {
     module.security.secure-dns.enable = mkEnableOption "Enables DNS-Over-TLS";
   };

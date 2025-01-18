@@ -9,11 +9,12 @@ with lib;
 let
   cfg = config.module.hyprland.binds;
 
-  mainMod       = "Super";
-  terminal      = "${pkgs.alacritty}/bin/alacritty";
-  fileManager   = "${pkgs.cinnamon.nemo}/bin/nemo";
-  menu          = "${pkgs.wofi}/bin/wofi --show drun";
-in {
+  mainMod = "Super";
+  terminal = "${pkgs.alacritty}/bin/alacritty";
+  fileManager = "${pkgs.cinnamon.nemo}/bin/nemo";
+  menu = "${pkgs.wofi}/bin/wofi --show drun";
+in
+{
   options = {
     module.hyprland.binds.enable = mkEnableOption "Enables binds in Hyprland";
   };
@@ -35,7 +36,7 @@ in {
         "${mainMod}, right, movefocus, r"
         "${mainMod}, up, movefocus, u"
         "${mainMod}, down, movefocus, d"
-	      "${mainMod}, S, togglespecialworkspace, magic"
+        "${mainMod}, S, togglespecialworkspace, magic"
         "${mainMod} SHIFT, S, movetoworkspace, special:magic"
 
         "${mainMod}, mouse_down, workspace, e+1"
@@ -46,22 +47,26 @@ in {
       ]
       ++ (
         builtins.concatLists (
-          builtins.genList (
-            x: let
-            ws = let
-            c = (x + 1) / 10;
-            in
-              builtins.toString (x + 1 - (c * 10));
-            in [
-              "${mainMod}, ${ws}, workspace, ${toString (x + 1)}"
-              "${mainMod} SHIFT, ${ws}, movetoworkspace, ${toString (x + 1)}"
-            ]
-          )
-        10)
+          builtins.genList
+            (
+              x:
+              let
+                ws =
+                  let
+                    c = (x + 1) / 10;
+                  in
+                  builtins.toString (x + 1 - (c * 10));
+              in
+              [
+                "${mainMod}, ${ws}, workspace, ${toString (x + 1)}"
+                "${mainMod} SHIFT, ${ws}, movetoworkspace, ${toString (x + 1)}"
+              ]
+            )
+            10)
       );
       bindm = [
-          "${mainMod}, mouse:272, movewindow"
-          "${mainMod}, mouse:273, resizewindow"
+        "${mainMod}, mouse:272, movewindow"
+        "${mainMod}, mouse:273, resizewindow"
       ];
       windowrulev2 = [
         "float,class:.*"

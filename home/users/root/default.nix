@@ -18,15 +18,15 @@
   ];
 
   module = {
-    git.enable      = true;
-    btop.enable     = true;
+    git.enable = true;
+    btop.enable = true;
     fastfetch.enable = true;
     # nvim.enable    = true;
-    fish.enable     = true;
-    eza.enable      = true; 
+    fish.enable = true;
+    eza.enable = true;
 
     nix-config = {
-      enable                     = true;
+      enable = true;
       useNixPackageManagerConfig = false;
     };
   };

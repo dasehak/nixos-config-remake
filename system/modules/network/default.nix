@@ -8,7 +8,8 @@ with lib;
 
 let
   cfg = config.module.network;
-in {
+in
+{
   options = {
     module.network.enable = mkEnableOption "Enables network";
   };

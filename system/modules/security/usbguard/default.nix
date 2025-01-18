@@ -7,7 +7,8 @@ with lib;
 
 let
   cfg = config.module.security.usbguard;
-in {
+in
+{
   options = {
     module.security.usbguard = {
       enable = mkEnableOption "Enables usbguard";

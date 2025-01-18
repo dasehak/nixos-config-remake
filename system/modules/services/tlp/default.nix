@@ -7,7 +7,8 @@ with lib;
 
 let
   cfg = config.module.services.tlp;
-in {
+in
+{
   options = {
     module.services.tlp.enable = mkEnableOption "Enable tlp";
   };
@@ -15,7 +16,7 @@ in {
   config = mkIf cfg.enable {
     services.tlp = {
       enable = true;
-      
+
       settings = {
         /*
         CPU_SCALING_GOVERNOR_ON_AC = "performance";

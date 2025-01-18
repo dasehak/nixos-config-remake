@@ -7,7 +7,8 @@ with lib;
 
 let
   cfg = config.module.waybar;
-in {
+in
+{
   options = {
     module.waybar.enable = mkEnableOption "Enables waybar";
   };

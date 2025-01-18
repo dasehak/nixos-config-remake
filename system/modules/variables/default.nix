@@ -8,7 +8,8 @@ with lib;
 
 let
   cfg = config.module.variables;
-in {
+in
+{
   options = {
     module.variables.enable = mkEnableOption "Enables variables";
   };

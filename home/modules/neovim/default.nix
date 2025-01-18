@@ -9,7 +9,8 @@ with lib;
 
 let
   cfg = config.module.nvim;
-in {
+in
+{
   options = {
     module.nvim.enable = mkEnableOption "Enables nvim";
   };
@@ -24,8 +25,8 @@ in {
         lsp = {
           enable = true;
           servers = {
-            lua-ls.enable = true;
-            rust-analyzer = {
+            lua_ls.enable = true;
+            rust_analyzer = {
               enable = true;
               installCargo = true;
               installRustc = true;

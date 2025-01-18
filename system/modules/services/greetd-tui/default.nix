@@ -10,7 +10,8 @@ with lib;
 
 let
   cfg = config.module.services.greetd-tui;
-in {
+in
+{
   options = {
     module.services.greetd-tui.enable = mkEnableOption "Enable greetd-tui";
   };

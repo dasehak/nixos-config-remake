@@ -8,7 +8,8 @@ with lib;
 
 let
   cfg = config.module.services.plasma;
-in {
+in
+{
   options = {
     module.services.plasma.enable = mkEnableOption "Enable KDE Plasma";
   };

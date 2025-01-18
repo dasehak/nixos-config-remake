@@ -9,7 +9,8 @@ with lib;
 
 let
   cfg = config.module.users;
-in {
+in
+{
   options = {
     module.users.enable = mkEnableOption "Enables users";
   };
@@ -30,7 +31,8 @@ in {
             "networkmanager"
             "input"
           ];
-        } (mkIf (username == "dasehak") {
+        }
+          (mkIf (username == "dasehak") {
           extraGroups = [
             "wheel"
             "docker"

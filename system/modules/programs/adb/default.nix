@@ -7,7 +7,8 @@ with lib;
 
 let
   cfg = config.module.programs.adb;
-in {
+in
+{
   options = {
     module.programs.adb.enable = mkEnableOption "Enable adb";
   };

@@ -8,7 +8,8 @@ with lib;
 
 let
   cfg = config.module.programs.hm;
-in {
+in
+{
   imports = [
     inputs.home-manager.nixosModules.home-manager
   ];

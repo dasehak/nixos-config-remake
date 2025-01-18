@@ -8,7 +8,8 @@ with lib;
 
 let
   cfg = config.module.virtualisation.libvirtd;
-in {
+in
+{
   options = {
     module.virtualisation.libvirtd.enable = mkEnableOption "Enables libvirtd";
   };
