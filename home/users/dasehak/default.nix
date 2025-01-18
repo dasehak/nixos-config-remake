@@ -24,12 +24,12 @@ in
     (import ../../overlays/catppuccin-papirus-folders)
   ];
 
-  stylix.targets = {
-    vscode.enable    = false;
-    kde.enable       = false;
-    hyprland.enable  = false;
-    hyprpaper.enable = false;
-  };
+  #stylix.targets = {
+  #  vscode.enable    = false;
+  #  kde.enable       = false;
+  #  hyprland.enable  = false;
+  #  hyprpaper.enable = false;
+  #};
 
   module = {
     firefox.enable = isLinux && isWorkstation;

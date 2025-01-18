@@ -9,8 +9,8 @@ with inputs;
     chaotic.nixosModules.default
     fps.nixosModules.programs-sqlite
 
-    stylix.nixosModules.stylix
-    ../../modules/stylix
+    #stylix.nixosModules.stylix
+    #../../modules/stylix
 
     ./locales
     ./network

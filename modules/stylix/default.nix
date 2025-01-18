@@ -6,16 +6,25 @@
 }:
 
 let
-  theme = "${pkgs.base16-schemes}/share/themes/catppuccin-mocha.yaml";
-  wallpaper = pkgs.fetchFromGitHub {
-    owner = "hyprwm";
-    repo = "Hyprland";
-    rev = "0e87a08e15c023325b64920d9e1159f38a090695";
-    sha256 = "sha256-gM4cDw45J8mBmM0aR5Ko/zMAA8UWnQhc4uZ5Ydvc4uo=";
-  } + "/assets/wall2.png";
+  theme = builtins.readFile (config.scheme {
+    use-ifd = "always";
+  });
+  wallpaper = pkgs.fetchFromGitHub
+    {
+      owner = "hyprwm";
+      repo = "Hyprland";
+      rev = "0e87a08e15c023325b64920d9e1159f38a090695";
+      sha256 = "sha256-gM4cDw45J8mBmM0aR5Ko/zMAA8UWnQhc4uZ5Ydvc4uo=";
+    } + "/assets/wall2.png";
   fontsPackage = pkgs.noto-fonts;
   cursorSize = 24;
-in {
+in
+{
+  config.scheme = {
+    yaml = "${inputs.tt-schemes}/base16/catppuccin-mocha.yaml";
+    use-ifd = "always";
+  };
+
   stylix = {
     enable = true;
     image = wallpaper;
@@ -36,9 +45,9 @@ in {
 
       sizes = {
         applications = 10;
-        terminal     = 10;
-        popups       = 10;
-        desktop      = 10;
+        terminal = 10;
+        popups = 10;
+        desktop = 10;
       };
     };
   };

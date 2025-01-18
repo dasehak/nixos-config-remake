@@ -6,8 +6,8 @@ with inputs;
 
 {
   imports = [
-    stylix.homeManagerModules.stylix
-    nur.hmModules.nur
+    #stylix.homeManagerModules.stylix
+    #../../modules/stylix
     
     nix-flatpak.homeManagerModules.nix-flatpak
     ../../modules/stylix
