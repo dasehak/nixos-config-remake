@@ -21,9 +21,9 @@ in
           layer = "top";
           position = "bottom";
           height = 24;
-          modules-left = ["wlr/taskbar"];
-          modules-center = ["hyprland/window"];
-          modules-right = ["battery" "clock"];
+          modules-left = [ "wlr/taskbar" ];
+          modules-center = [ "hyprland/window" ];
+          modules-right = [ "battery" "clock" ];
           "hyprland/window" = {
             max-length = 50;
           };
@@ -33,7 +33,7 @@ in
           };
           battery = {
             format = "{capacity}% {icon}";
-            format-icons = ["" "" "" "" ""];
+            format-icons = [ "" "" "" "" "" ];
           };
           clock = {
             format-alt = "{:%a, %d. %b  %H:%M}";

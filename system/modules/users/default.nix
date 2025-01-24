@@ -16,6 +16,8 @@ in
   };
 
   config = mkIf cfg.enable {
+    services.userborn.enable = true;
+
     users = {
       mutableUsers = false;
 
@@ -33,16 +35,16 @@ in
           ];
         }
           (mkIf (username == "dasehak") {
-          extraGroups = [
-            "wheel"
-            "docker"
-            "libvirtd"
-            "vboxusers"
-            "adbusers"
-          ];
+            extraGroups = [
+              "wheel"
+              "docker"
+              "libvirtd"
+              "vboxusers"
+              "adbusers"
+            ];
 
-          hashedPassword = "$6$5IZeCNcdDeFAW2xI$TcZuPTl.nqtsQpuNTqyzZmOaDyOdsLarbkeqbKjXO5UX80GNaAeVuuLB5iPZq90PdiyN0ru2eC7SiGxLoSvws.";
-        })]);
+            hashedPassword = "$6$5IZeCNcdDeFAW2xI$TcZuPTl.nqtsQpuNTqyzZmOaDyOdsLarbkeqbKjXO5UX80GNaAeVuuLB5iPZq90PdiyN0ru2eC7SiGxLoSvws.";
+          })]);
 
         root = {
           shell = pkgs.fish;

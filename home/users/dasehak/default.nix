@@ -50,6 +50,7 @@ in
     syncthing.enable = true;
     plasma.enable = true;
     flatpak.enable = true;
+    usbguard-notifier.enable = true;
 
 
     nix-config = {
@@ -57,6 +58,12 @@ in
       useNixPackageManagerConfig = true;
       useGarbageCollection = false;
     };
+  };
+
+  catppuccin.enable = true;
+  services.nextcloud-client = {
+      enable = true;
+      startInBackground = true;
   };
 
   home = {
@@ -87,12 +94,12 @@ in
       # 3D
       inputs.nixpkgs-blender-3-6-5.legacyPackages.${pkgs.system}.blender-hip
 
-      # Gayming
+      # Gaming
       winetricks
       mangohud
 
       inputs.nix-gaming.packages.${pkgs.system}.wine-ge
-      inputs.nix-gaming.packages.${pkgs.system}.wine-discord-ipc-bridge
+      # inputs.nix-gaming.packages.${pkgs.system}.wine-discord-ipc-bridge
       openttd
       warzone2100
       xonotic-glx
@@ -100,7 +107,11 @@ in
       gzdoom
       superTuxKart
       prismlauncher
+      minetest
+      openra
       steam-run
+      fallout-ce
+      heroic
 
       # Dev
       vscode
@@ -109,12 +120,11 @@ in
       nix-direnv
       nixd
       nixpkgs-fmt
-      android-studio
+      lazarus-qt6
 
       # Chats
       inputs.nixpkgs-materialgram.legacyPackages.${pkgs.system}.materialgram
       vesktop
-      # cinny-desktop
       element-desktop
       mumble
 
@@ -123,11 +133,11 @@ in
 
       # Office
       onlyoffice-bin
+      libreoffice-qt6-fresh
 
       # Misc
       keepassxc
       bandwhich
-      nextcloud-client
       hyperfine
       tgpt
       strawberry
@@ -140,6 +150,16 @@ in
       unrar
       nekoray
       flatpak
+      python313
+      woeusb-ng
+      ventoy-full
+      clang
+      noto-fonts
+      noto-fonts-color-emoji
+      aseprite
+
+      udftools # TODO
+      syncthingtray
     ];
   };
 }

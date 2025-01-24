@@ -16,7 +16,7 @@ in
   config = mkIf cfg.enable {
     services.openssh = {
       enable = true;
-      allowSFTP = false;
+      allowSFTP = true;
       ports = [ 5487 ];
       settings = {
         PasswordAuthentication = false;

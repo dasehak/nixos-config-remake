@@ -42,6 +42,7 @@ in
         };
         git.autofetch = true;
         window.titleBarStyle = "custom";
+        formatall.search.include = "**/*.*";
       };
     };
   };

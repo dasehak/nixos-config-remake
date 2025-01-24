@@ -73,34 +73,44 @@
     ayugram-desktop.url = "git+https://github.com/kaeeraa/ayugram-desktop?submodules=1";
 
     nix-flatpak.url = "github:gmodena/nix-flatpak";
+
+    base16.url = "github:SenchoPens/base16.nix";
+
+    tt-schemes = {
+      url = "github:tinted-theming/schemes";
+      flake = false;
+    };
+    catppuccin.url = "github:catppuccin/nix";
+
+    openbonzi.url = "git+https://codeberg.org/ext0l/openbonzi";
   };
 
   outputs = { flake-parts, ... } @ inputs:
-  let
+    let
       linuxArch = "x86_64-linux";
       stateVersion = "24.11";
 
-    libx = import ./lib { inherit inputs stateVersion; };
+      libx = import ./lib { inherit inputs stateVersion; };
     in
     flake-parts.lib.mkFlake { inherit inputs; } {
-    systems = [
-      linuxArch
-    ];
+      systems = [
+        linuxArch
+      ];
 
-    flake = {
-      nixosConfigurations = {
+      flake = {
+        nixosConfigurations = {
           nyax = libx.mkHost { hostname = "nyax"; username = "dasehak"; isWorkstation = true; platform = linuxArch; };
           qemux = libx.mkHost { hostname = "qemux"; username = "dasehak"; isWorkstation = true; platform = linuxArch; };
-      };
+        };
 
-      homeConfigurations = {
+        homeConfigurations = {
           "dasehak@nyax" = libx.mkHome { hostname = "nyax"; username = "dasehak"; isWorkstation = true; platform = linuxArch; };
           "root@nyax" = libx.mkHome { hostname = "nyax"; username = "root"; isWorkstation = true; platform = linuxArch; };
 
           "dasehak@qemux" = libx.mkHome { hostname = "qemux"; username = "dasehak"; isWorkstation = true; platform = linuxArch; };
           "root@qemux" = libx.mkHome { hostname = "qemux"; username = "root"; isWorkstation = true; platform = linuxArch; };
+        };
       };
     };
-  };
 }
 

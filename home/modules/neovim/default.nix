@@ -34,7 +34,8 @@ in
             clangd.enable = true;
           };
         };
-	    telescope.enable = true;
+        telescope.enable = true;
+        web-devicons.enable = true;
       };
       opts = {
         number = true;

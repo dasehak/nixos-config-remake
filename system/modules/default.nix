@@ -8,6 +8,7 @@ with inputs;
   imports = [
     chaotic.nixosModules.default
     fps.nixosModules.programs-sqlite
+    catppuccin.nixosModules.catppuccin
 
     #stylix.nixosModules.stylix
     #../../modules/stylix

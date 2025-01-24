@@ -40,6 +40,10 @@ let
     "yadi.sk"
     "di.sk"
     "192.168.1.0/24"
+    "127.0.0.1"
+    "pochta.ru"
+    "nextcloud.kontrkultura.space"
+    ".pskgu.ru"
   ];
 in
 {
@@ -68,7 +72,7 @@ in
         DisableSetDesktopBackground = true;
         DisableTelemetry = true;
         DNSOverHTTPS = {
-          Enabled = false;
+          Enabled = true;
           ProviderURL = DoHUrl;
           Fallback = false;
           Locked = true;
@@ -102,7 +106,7 @@ in
         NetworkPrediction = false;
         OfferToSaveLogins = false;
         PasswordManagerEnabled = false;
-        PostQuantumKeyAgreementEnabled = false;
+        PostQuantumKeyAgreementEnabled = true;
         Preferences = {
           browser = {
             contentblocking.category = {
@@ -139,6 +143,10 @@ in
             };
             prefetch-next = {
               Value = false;
+              Status = "locked";
+            };
+            http.http3.alt-svc-mapping-for-testing = {
+              Value = true;
               Status = "locked";
             };
           };

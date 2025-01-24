@@ -8,6 +8,7 @@
     kernelModules = [
       "amdgpu"
       "kvm-intel"
+      "udf"
     ];
 
     extraModulePackages = with config.boot.kernelPackages; [

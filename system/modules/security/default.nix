@@ -16,8 +16,8 @@ with lib;
   ];
 
   module.security = {
-    sudo.enable       = mkDefault true;
-    sops.enable       = mkDefault true;
+    sudo.enable = mkDefault true;
+    sops.enable = mkDefault true;
     secure-dns.enable = mkDefault true;
   };
 }

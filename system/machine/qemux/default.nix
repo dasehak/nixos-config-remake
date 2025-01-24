@@ -17,6 +17,12 @@
 
     programs = {
       systemPackages.enable = true;
+      dconf.enable = true;
+      gnupg.enable = true;
+      hm.enable = true;
+      nh.enable = true;
+      mtr.enable = true;
+      fish.enable = true;
     };
 
     security = {

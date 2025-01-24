@@ -6,7 +6,7 @@
   boot = {
     loader = {
       systemd-boot = {
-        enable = false;
+        enable = true;
         consoleMode = "max";
         editor = false;
       };
@@ -20,7 +20,7 @@
     };
     initrd.systemd.enable = true;
     lanzaboote = {
-      enable = true;
+      enable = false;
       pkiBundle = "/etc/secureboot";
     };
   };

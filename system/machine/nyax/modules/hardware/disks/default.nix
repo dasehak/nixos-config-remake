@@ -19,6 +19,9 @@ _:
                 mountOptions = [
                   "defaults"
                   "umask=0077"
+                  "nosuid"
+                  "noexec"
+                  "nodev"
                 ];
               };
             };
@@ -111,17 +114,30 @@ _:
     nodev."/" = {
       fsType = "tmpfs";
       mountOptions = [
-        "size=8G"
+        "size=16G"
         "defaults"
         "mode=755"
       ];
     };
   };
 
-  fileSystems."/persistent".neededForBoot = true;
+  fileSystems = {
+    "/persistent".neededForBoot = true;
+    "/boot".neededForBoot = true;
+  };
 
-  boot.initrd.luks.devices.root = {
-    device = "/dev/nvme0n1p3";
-    preLVM = true;
+  boot = {
+    supportedFilesystems = [
+      "ntfs"
+      "exfat"
+      "ext4"
+      "ufs"
+      "ufs2"
+    ];
+
+    initrd.luks.devices.root = {
+      device = "/dev/nvme0n1p3";
+      preLVM = true;
+    };
   };
 }

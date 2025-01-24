@@ -25,6 +25,10 @@ in
     services.usbguard = {
       enable = true;
       ruleFile = cfg.ruleFile;
+      IPCAllowedUsers = [
+        "root"
+        "dasehak"
+      ];
     };
   };
 }

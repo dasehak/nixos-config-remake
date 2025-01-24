@@ -34,37 +34,12 @@ in
       };
     };
 
+    programs = {
+      partition-manager.enable = true;
+    };
+
     environment.systemPackages = with pkgs; [
       catppuccin-sddm
-      haruna
-    ] ++ (with pkgs.kdePackages; [
-      akonadi
-      akonadiconsole
-      akonadi-search
-      akonadi-calendar
-      akonadi-calendar-tools
-      akonadi-contacts
-      akonadi-import-wizard
-      akonadi-mime
-      akonadi-notes
-      kdepim-addons
-      kdepim-runtime
-      kmail-account-wizard
-      gwenview
-      krfb
-      kmail
-      sddm-kcm
-      spectacle
-      tokodon
-      kjournald
-      partitionmanager
-      kpmcore
-      neochat
-      plasma-vault
-      discover
-      kaccounts-providers
-      kaccounts-integration
-      qtwebengine
-    ]);
+    ];
   };
 }

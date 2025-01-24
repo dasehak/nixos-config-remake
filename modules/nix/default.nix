@@ -39,11 +39,15 @@ in
           "cinny-4.1.0"
           "cinny-desktop-4.1.0"
           "cinny-unwrapped-4.1.0"
+          "dotnet-runtime-wrapped-6.0.36"
+          "dotnet-runtime-6.0.36"
+          "dotnet-sdk-wrapped-6.0.428"
+          "dotnet-sdk-6.0.428"
         ];
         android_sdk.accept_license = true;
       };
       overlays = [
-        inputs.nur.overlay
+        inputs.nur.overlays.default
       ];
     };
 
@@ -54,6 +58,7 @@ in
         nixpkgs-unstable.flake = inputs.nixpkgs-unstable;
         nixpkgs-stable.flake = inputs.nixpkgs-stable;
         nixpkgs-master.flake = inputs.nixpkgs-master;
+        chaotic.flake = inputs.chaotic;
       };
       package = pkgs.lix;
 
@@ -66,7 +71,8 @@ in
           "https://nix-gaming.cachix.org"
           "https://nyx.chaotic.cx/"
           "https://mur.cachix.org/"
-          "https://cache.garnix.io"
+          "https://nix-community.cachix.org/"
+          "https://chaotic-nyx.cachix.org/"
         ];
         trusted-public-keys = [
           "cache.nixos.org-1:6NCHdD59X431o0gWypbMrAURkbJ16ZPMQFGspcDShjY="

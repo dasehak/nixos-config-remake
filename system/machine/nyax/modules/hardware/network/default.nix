@@ -3,13 +3,14 @@ _:
 {
   networking = {
     nameservers = [
+      "192.168.1.100"
       "192.168.1.1"
       "8.8.8.8"
-      "8.8.4.4"
     ];
     extraHosts =
       ''
-        127.0.0.1 account.jetbrains.com
+        100.83.120.96 us.actual.battle.net
+        100.83.120.96 eu.actual.battle.net
       '';
 
     firewall = {

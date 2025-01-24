@@ -8,9 +8,9 @@ with inputs;
   imports = [
     #stylix.homeManagerModules.stylix
     #../../modules/stylix
-    
+    nur.modules.homeManager.default
     nix-flatpak.homeManagerModules.nix-flatpak
-    ../../modules/stylix
+    catppuccin.homeManagerModules.catppuccin
 
     ./firefox
     ./git
@@ -29,6 +29,7 @@ with inputs;
     ./syncthing
     ./plasma
     ./flatpak
+    ./usbguard-notifier
   ];
 }
 

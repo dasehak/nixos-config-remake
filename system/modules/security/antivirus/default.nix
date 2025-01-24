@@ -10,24 +10,18 @@ let
   cfg = config.module.security.antivirus;
 
   notifyAllUsers = pkgs.writeScript "notifyAllUsersAboutVirus"
-  ''
-    #!/bin/sh
-    ALERT="Signature detected by clamav: $CLAM_VIRUSEVENT_VIRUSNAME in $CLAM_VIRUSEVENT_FILENAME"
-    # Send an alert to all graphical users.
-    for ADDRESS in /run/user/*; do
-        USERID=''${ADDRESS#/run/user/}
-       /run/wrappers/bin/sudo -u "#$USERID" DBUS_SESSION_BUS_ADDRESS="unix:path=$ADDRESS/bus" ${pkgs.libnotify}/bin/notify-send -i dialog-warning "Virus detected!" "$ALERT"
-    done
-  '';
+    ''
+      #!/bin/sh
+      ALERT="Signature detected by clamav: $CLAM_VIRUSEVENT_VIRUSNAME in $CLAM_VIRUSEVENT_FILENAME"
+      # Send an alert to all graphical users.
+      for ADDRESS in /run/user/*; do
+          USERID=''${ADDRESS#/run/user/}
+         /run/wrappers/bin/sudo -u "#$USERID" DBUS_SESSION_BUS_ADDRESS="unix:path=$ADDRESS/bus" ${pkgs.libnotify}/bin/notify-send -i dialog-warning "Virus detected!" "$ALERT"
+      done
+    '';
 
   dirsToScan = [
-    "/home"
-    "/nix"
-    "/persistent"
-    "/var"
-    "/etc"
-    "/root"
-    "/tmp"
+    "/home/dasehak"
   ];
 
   securiteinfo_token = builtins.readFile ../../../../secrets/git/securiteinfo_token;
@@ -40,9 +34,9 @@ in
   config = mkIf cfg.enable {
     security.sudo = {
       extraConfig =
-      ''
-        clamav ALL=(ALL) NOPASSWD: SETENV: ${pkgs.libnotify}/bin/notify-send
-      '';
+        ''
+          clamav ALL=(ALL) NOPASSWD: SETENV: ${pkgs.libnotify}/bin/notify-send
+        '';
     };
     services = {
       clamav = {
@@ -51,11 +45,12 @@ in
           enable = true;
           settings = {
             OnAccessIncludePath = dirsToScan;
-            OnAccessPrevention = false;
-            OnAccessExtraScanning = true;
-            OnAccessExcludeUname =  "clamav";
+            OnAccessExtraScanning = "yes";
+            OnAccessExcludeUname = "clamav";
             VirusEvent = "${notifyAllUsers}";
-            User = "clamav";
+            MaxRecursion = 32;
+            MaxFileSize = "5G";
+            MaxScanSize = "5G";
           };
         };
         updater = {
@@ -86,41 +81,18 @@ in
         };
       };
     };
-    systemd = {
-      services = {
-        clamav-clamonacc = {
-          description = "ClamAV daemon (clamonacc)";
-          after = [ "clamav-freshclam.service" ];
-          wantedBy = [ "multi-user.target" ];
-          restartTriggers = [ "/etc/clamav/clamd.conf" ];
+    systemd.services.clamav-clamonacc = {
+      description = "ClamAV daemon (clamonacc)";
+      after = [ "clamav-freshclam.service" ];
+      wantedBy = [ "multi-user.target" ];
+      restartTriggers = [ "/etc/clamav/clamd.conf" ];
 
-          serviceConfig = {
-            Type = "simple";
-            ExecStart = "${pkgs.systemd}/bin/systemd-cat --identifier=av-scan ${pkgs.clamav}/bin/clamonacc -F --fdpass";
-            PrivateTmp = "yes";
-            PrivateDevices = "yes";
-            PrivateNetwork = "yes";
-          };
-        };
-        antivirusFullScan = {
-          description = "scan all directories for suspect files";
-          wants = [ "network-online.target" ];
-          after = [ "network-online.target" ];
-          serviceConfig = {
-            Type = "oneshot";
-            ExecStart = ''
-              ${pkgs.systemd}/bin/systemd-cat --identifier=av-scan ${pkgs.clamav}/bin/clamdscan --quiet --recursive --fdpass ${toString dirsToScan}
-            '';
-          };
-        };
-      };
-      timers.antivirusFullScan = {
-        description = "scan all directories for suspect files";
-        wantedBy = [ "timers.target" ];
-        timerConfig = {
-          OnCalendar = "monthly";
-          Unit = "antivirusFullScan.service";
-        };
+      serviceConfig = {
+        Type = "simple";
+        ExecStart = "${pkgs.systemd}/bin/systemd-cat --identifier=av-scan ${pkgs.clamav}/bin/clamonacc -F --fdpass";
+        PrivateTmp = "yes";
+        PrivateDevices = "yes";
+        PrivateNetwork = "yes";
       };
     };
   };

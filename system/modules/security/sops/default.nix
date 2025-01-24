@@ -20,7 +20,7 @@ in
   config = mkIf cfg.enable {
     sops = {
       defaultSopsFile = ../../../../secrets/sops/secrets.yaml;
-      age.sshKeyPaths = [ "/etc/ssh/ssh_host_ed25519_key" ];
+      age.sshKeyPaths = [ "/persistent/etc/ssh/ssh_host_ed25519_key" ];
       secrets.nyax_usb_rules = { };
     };
   };
